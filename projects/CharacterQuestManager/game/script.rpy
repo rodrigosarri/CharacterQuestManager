@@ -119,10 +119,10 @@ label start:
 
     # Example of how to assemble a character
     $ mountCharacter.addChar(
-        "Michelle", # Name of you character
+        "Lucy", # Name of you character
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", # Description of you character (max: 570 characters)
-        "cqm/assets/images/chars/michelle_pic_idle.png", # Profile picture of the character that will be on the button
-        "cqm/assets/images/chars/michelle.png", # Image that will be next to the character description
+        "cqm/assets/images/chars/lucy_pic_idle.png", # Profile picture of the character that will be on the button
+        "cqm/assets/images/chars/lucy.png", # Image that will be next to the character description
         {
             "relationship": {
                 "current": 0,
@@ -145,12 +145,12 @@ label start:
     )
 
     $ mountCharacter.getAllChars[0].addRelationship(30) # Increasing the character's relationship
-    $ mountCharacter.getCharByName("Michelle").addCorruption(15) # You can also increase it using the char name as a parameter instead of the number
-    $ mountCharacter.getCharByName("michelle").addSluttiness(25) # The name can be capitalized or lowercase, it doesn't matter
+    $ mountCharacter.getCharByName("Lucy").addCorruption(15) # You can also increase it using the char name as a parameter instead of the number
+    $ mountCharacter.getCharByName("lucy").addSluttiness(25) # The name can be capitalized or lowercase, it doesn't matter
 
     # Example of how to build a quest
     $ mountQuest.addQuest(
-        mountCharacter.getCharByName("Michelle"), # Add which character this quest is
+        mountCharacter.getCharByName("Lucy"), # Add which character this quest is
         "Raise the relationship level with your wife", # Quest Title
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a",
         "inProgress", # Quest description (max: 225 characters)
@@ -163,20 +163,20 @@ label start:
     )
 
     $ mountQuest.addQuest(
-        mountCharacter.getCharByName("Michelle"),
+        mountCharacter.getCharByName("Lucy"),
         "new test quest",
         "whatever.",
         "done",
     )
 
-    $ mountQuest.getQuestObjectByChar("Michelle")[0].setTitle("New Title Quest")
-    $ mountQuest.getQuestObjectByChar("Michelle")[0].addProgress()
+    $ mountQuest.getQuestObjectByChar("Lucy")[0].setTitle("New Title Quest")
+    $ mountQuest.getQuestObjectByChar("Lucy")[0].addProgress()
 
     $ mountCharacter.addChar(
-        "Lisa",
+        "Jane",
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
-        "cqm/assets/images/chars/lisa_pic_idle.png",
-        "cqm/assets/images/chars/lisa.png",
+        "cqm/assets/images/chars/jane_pic_idle.png",
+        "cqm/assets/images/chars/jane.png",
         {
             "relationship": {
                 "current": 0,
