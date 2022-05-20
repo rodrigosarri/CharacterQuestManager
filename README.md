@@ -8,6 +8,10 @@ The tool allows you to manage characters and quests using classes and methods ca
 
 Copy the `/projects/CharacterQuestManager/game/cqm` folder to your project and follow some examples and instructions left in the file: `CharacterQuestManager/game/script.rpy`
 
+![Character screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/projects/CharacterQuestManager/game/cqm/assets/images/example_characters.png)
+
+![Quest Log screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/projects/CharacterQuestManager/game/cqm/assets/images/example_questlog.png)
+
 ## version 1.0.0-alpha.0
 
 Keep in mind that this is an alpha release, so it's not a production release yet, I'm making this release available for you to use, test and report any issues or suggestions when using it in your game.
