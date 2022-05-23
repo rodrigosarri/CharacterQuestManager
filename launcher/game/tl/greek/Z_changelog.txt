@@ -1,8 +1,0 @@
-RenPy_Launcher_Greek_V_1_0
-The initial release.
-
-
-
-
-RenPy_Launcher_Greek_V_1_1
-Some obvious typos were fixed.

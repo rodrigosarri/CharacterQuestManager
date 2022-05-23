@@ -1,0 +1,74 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 28, in script
+    e "You've created a new Ren'Py game."
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+  File "game/cqm/engine/screens.rpy", line 1, in execute
+    screen openButton():
+  File "game/cqm/engine/screens.rpy", line 1, in execute
+    screen openButton():
+  File "game/cqm/engine/screens.rpy", line 3, in execute
+    textbutton "Menu" action menuButtonActions style "openButton"
+  File "game/cqm/engine/screens.rpy", line 3, in keywords
+    textbutton "Menu" action menuButtonActions style "openButton"
+  File "game/cqm/engine/screens.rpy", line 3, in <module>
+    textbutton "Menu" action menuButtonActions style "openButton"
+NameError: name 'menuButtonActions' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 28, in script
+    e "You've created a new Ren'Py game."
+  File "renpy/ast.py", line 689, in execute
+    statement_name(stmt_name)
+  File "renpy/ast.py", line 46, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+  File "renpy/exports.py", line 1684, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2762, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 436, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 447, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 637, in update
+    self.screen.function(**self.scope)
+  File "game/cqm/engine/screens.rpy", line 1, in execute
+    screen openButton():
+  File "game/cqm/engine/screens.rpy", line 1, in execute
+    screen openButton():
+  File "game/cqm/engine/screens.rpy", line 3, in execute
+    textbutton "Menu" action menuButtonActions style "openButton"
+  File "game/cqm/engine/screens.rpy", line 3, in keywords
+    textbutton "Menu" action menuButtonActions style "openButton"
+  File "game/cqm/engine/screens.rpy", line 3, in <module>
+    textbutton "Menu" action menuButtonActions style "openButton"
+NameError: name 'menuButtonActions' is not defined
+
+Windows-10-10.0.22000
+Ren'Py 7.4.11.2266
+CharacterQuestManager 1.0
+Sun May 22 23:38:16 2022
