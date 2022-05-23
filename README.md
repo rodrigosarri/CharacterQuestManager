@@ -10,9 +10,9 @@ Copy the `game/cqm` folder to your project and follow some examples and instruct
 
 In your script.rpy just add this line: `call cqm`
 
-![Character screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/projects/CharacterQuestManager/game/cqm/assets/images/example_characters.png)
+![Character screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/game/cqm/assets/images/example_characters.png)
 
-![Quest Log screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/projects/CharacterQuestManager/game/cqm/assets/images/example_questlog.png)
+![Quest Log screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/game/cqm/assets/images/example_questlog.png)
 
 ## version 1.0.0-alpha.0
 
