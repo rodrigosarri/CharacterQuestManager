@@ -2,19 +2,30 @@ label cqm:
     # Don't touch
     # Character 'n' Quest Manager
 
-    $ configPanel = Panel()
-    #$ configPanel.setColor("anakiwa")
-    #$ configPanel.setColor("caribbean_green")
-    #$ configPanel.setColor("electric_violet")
-    #$ configPanel.setColor("guardsman_red")
-    #$ configPanel.setColor("limeade")
-    #$ configPanel.setColor("lipstick")
-    #$ configPanel.setColor("pacific_blue")
-    #$ configPanel.setColor("rio_grande")
-    #$ configPanel.setColor("science_blue")
-    #$ configPanel.setColor("tenn")
-
     $ defaultFolder = "cqm/assets/"
+
+    $ configPanel = Panel()
+    # $ configPanel.setColor("anakiwa")
+    # $ configPanel.setColor("caribbean_green")
+    # $ configPanel.setColor("electric_violet")
+    # $ configPanel.setColor("guardsman_red")
+    # $ configPanel.setColor("limeade")
+    # $ configPanel.setColor("lipstick")
+    # $ configPanel.setColor("pacific_blue")
+    # $ configPanel.setColor("rio_grande")
+    # $ configPanel.setColor("science_blue")
+    # $ configPanel.setColor("tenn")
+
+    # default images
+    image bgChar         = "[defaultFolder]images/bg.png"
+    image bgStats        = "[defaultFolder]images/bg_stats.png"
+    image bgQuest        = "[defaultFolder]images/bg_quest.png"
+    image noPhoto        = "[defaultFolder]images/no-photo.png"
+    image noPicPhoto     = "[defaultFolder]images/no-pic-photo_idle.png"
+    image doneIcon       = "[defaultFolder]images/icons/done.png"
+    image inprogressIcon = "[defaultFolder]images/icons/in_progress.png"
+    image underdevIcon   = "[defaultFolder]images/icons/under_dev.png"
+    image noQuests       = "[defaultFolder]images/no_quests.png"
 
     $ menuButtonActions = [
         ToggleScreen("showChars"),
@@ -98,7 +109,6 @@ label cqm:
 
     $ mountCharacter = Characters()
     $ mountQuest = Quests()
-
 
     # Here is your playground ↓
 

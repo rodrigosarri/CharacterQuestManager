@@ -7,7 +7,6 @@ define e = Character("Eileen")
 
 
 # The game starts here.
-
 label start:
 
     # Show a background. This uses a placeholder by default, but you can
