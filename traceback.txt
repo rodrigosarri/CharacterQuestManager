@@ -49,4 +49,4 @@ Exception: In DynamicImage u'[defaultFolder]images/open_button_idle.png': Could 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
 CharacterQuestManager 1.0
-Tue May 24 22:34:23 2022
+Thu May 26 19:13:58 2022

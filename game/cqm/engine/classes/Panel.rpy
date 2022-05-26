@@ -13,7 +13,7 @@ init python:
                 self.currentColor = "default"
 
             self.titleChacters = titleChacters
-            self.titleQuest = titleChacters
+            self.titleQuest = titleQuest
 
         def checkColorList(self, color):
             colors = [
@@ -51,7 +51,7 @@ init python:
 
         @property
         def getBg(self):
-            return "cqm/assets/images/bg/" + self.getColor + "/bg_idle.png"
+            return defaultFolder + "images/bg/" + self.getColor + "/bg_idle.png"
 
         @property
         def getTitleChacters(self):
@@ -60,7 +60,3 @@ init python:
         @property
         def getTitleQuest(self):
             return self.titleQuest
-
-        @property
-        def getFontFolder(self):
-            return "cqm/assets/fonts/ARLRDBD.ttf"

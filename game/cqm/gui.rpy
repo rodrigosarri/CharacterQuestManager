@@ -42,12 +42,12 @@ style tabButton_text is text:
 style charTitle is text:
     size 50
     color "#000000"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style charDesc is text:
     size 25
     color "333333"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
     line_leading 8
     xmaximum 971
     justify True
@@ -55,27 +55,27 @@ style charDesc is text:
 style statsTitle is text:
     size 25
     color "#000000"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style statsRelationship is text:
     size 25
     color "#72ff00"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style statsCorruption is text:
     size 25
     color "#ff0000"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style statsSluttiness is text:
     size 25
     color "#005aff"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style statsAwareness is text:
     size 25
     color "#fff600"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style filterTitle is button:
     hover_background Transform("[defaultFolder]images/arrow_down.png", align=(0.5, 1.4))
@@ -87,17 +87,17 @@ style filterTitle_text is text:
     color "#525252"
     hover_color "#000000"
     selected_color "#000000"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style questTitle is text:
     size 35
     color "#000000"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style questDesc is text:
     size 20
     color "#797979"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
     line_leading 4
     xmaximum 1170
     justify True
@@ -105,26 +105,26 @@ style questDesc is text:
 style questHint is text:
     size 16
     color "#d40f0f"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
     justify True
     yanchor -1.0
 
 style questProgress is text:
     size 20
     color "#333333"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
     yanchor -0.7
 
 style titleIconDone is text:
     size 20
     color "#75d40f"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
     xpos 0.42
 
 style titleIconInprogress is text:
     size 20
     color "#d40f0f"
-    font "cqm/assets/fonts/ARLRDBD.ttf"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style mainFrame is default:
     xysize(1580, 872)

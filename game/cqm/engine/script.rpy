@@ -1,8 +1,8 @@
 label cqm:
+    define defaultFolder = "cqm/assets/"
+
     # Don't touch
     # Character 'n' Quest Manager
-
-    $ defaultFolder = "cqm/assets/"
 
     $ configPanel = Panel()
     # $ configPanel.setColor("anakiwa")
