@@ -22,9 +22,11 @@ label cqm:
     image bgQuest        = "[defaultFolder]images/bg_quest.png"
     image noPhoto        = "[defaultFolder]images/no-photo.png"
     image noPicPhoto     = "[defaultFolder]images/no-pic-photo_idle.png"
+    image newIcon        = "[defaultFolder]images/icons/new.png"
     image doneIcon       = "[defaultFolder]images/icons/done.png"
     image inprogressIcon = "[defaultFolder]images/icons/in_progress.png"
     image underdevIcon   = "[defaultFolder]images/icons/under_dev.png"
+    image closeIcon      = "[defaultFolder]images/icons/close.png"
     image noQuests       = "[defaultFolder]images/no_quests.png"
 
     $ menuButtonActions = [
@@ -36,7 +38,9 @@ label cqm:
         Hide("filterDoneQuests"),
         Hide("filterAllQuests"),
         Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests")
+        Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
     ]
 
     $ charTabButtonActions = [
@@ -47,7 +51,9 @@ label cqm:
         Hide("filterDoneQuests"),
         Hide("filterAllQuests"),
         Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests")
+        Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
     ]
 
     $ questTabButtonActions = [
@@ -58,7 +64,9 @@ label cqm:
         Hide("filterDoneQuests"),
         Hide("filterAllQuests"),
         Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests")
+        Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
     ]
 
     $ charButtonActions = [
@@ -67,7 +75,9 @@ label cqm:
         Hide("filterDoneQuests"),
         Hide("filterAllQuests"),
         Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests")
+        Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
     ]
 
     $ questButtonActions = [
@@ -76,13 +86,17 @@ label cqm:
         Hide("filterDoneQuests"),
         Hide("filterAllQuests"),
         Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests")
+        Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
     ]
 
     $ filterAllActions = [
         Hide("filterDoneQuests"),
         Hide("filterInProgressQuests"),
         Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
         Hide("char")
     ]
 
@@ -90,6 +104,8 @@ label cqm:
         Hide("filterAllQuests"),
         Hide("filterInProgressQuests"),
         Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
         Hide("char")
     ]
 
@@ -97,6 +113,8 @@ label cqm:
         Hide("filterDoneQuests"),
         Hide("filterAllQuests"),
         Hide("filterUnderDevQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
         Hide("char")
     ]
 
@@ -104,6 +122,25 @@ label cqm:
         Hide("filterDoneQuests"),
         Hide("filterAllQuests"),
         Hide("filterInProgressQuests"),
+        Hide("filterCloseQuests"),
+        Hide("filterNewQuests"),
+        Hide("char")
+    ]
+
+    $ filterNewActions = [
+        Hide("filterDoneQuests"),
+        Hide("filterAllQuests"),
+        Hide("filterInProgressQuests"),
+        Hide("filterCloseQuests"),
+        Hide("char")
+    ]
+
+    $ filterCloseActions = [
+        Hide("filterDoneQuests"),
+        Hide("filterAllQuests"),
+        Hide("filterInProgressQuests"),
+        Hide("filterNewQuests"),
+        Hide("filterUnderDevQuests"),
         Hide("char")
     ]
 
@@ -114,10 +151,10 @@ label cqm:
 
     # Example of how to assemble a character
     $ mountCharacter.addChar(
-        "Lucy", # Name of you character
+        "Michelle", # Name of you character
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", # Description of you character (max: 570 characters)
-        "cqm/assets/images/chars/lucy_pic_idle.png", # Profile picture of the character that will be on the button
-        "cqm/assets/images/chars/lucy.png", # Image that will be next to the character description
+        "cqm/assets/images/chars/michelle_pic_idle.png", # Profile picture of the character that will be on the button
+        "", # Image that will be next to the character description
         {
             "relationship": {
                 "current": 0,
@@ -139,13 +176,13 @@ label cqm:
         True # Character is active
     )
 
-    $ mountCharacter.getAllChars[0].addRelationship(30) # Increasing the character's relationship
-    $ mountCharacter.getCharByName("Lucy").addCorruption(15) # You can also increase it using the char name as a parameter instead of the number
-    $ mountCharacter.getCharByName("lucy").addSluttiness(25) # The name can be capitalized or lowercase, it doesn't matter
+    $ mountCharacter.getCharByName("Michelle").addRelationship(30) # Increasing the character's relationship
+    $ mountCharacter.getCharByName("Michelle").addCorruption(15) # You can also increase it using the char name as a parameter instead of the number
+    $ mountCharacter.getCharByName("Michelle").addSluttiness(25) # The name can be capitalized or lowercase, it doesn't matter
 
     # Example of how to build a quest
     $ mountQuest.addQuest(
-        mountCharacter.getCharByName("Lucy"), # Add which character this quest is
+        mountCharacter.getCharByName("Michelle"), # Add which character this quest is
         "Raise the relationship level with your wife", # Quest Title
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a",
         "inProgress", # Quest description (max: 225 characters)
@@ -158,20 +195,45 @@ label cqm:
     )
 
     $ mountQuest.addQuest(
-        mountCharacter.getCharByName("Lucy"),
+        mountCharacter.getCharByName("Michelle"),
         "new test quest",
         "whatever.",
         "done",
     )
 
-    $ mountQuest.getQuestObjectByChar("Lucy")[0].setTitle("New Title Quest")
-    $ mountQuest.getQuestObjectByChar("Lucy")[0].addProgress()
+    $ mountQuest.addQuest(
+        mountCharacter.getCharByName("Michelle"),
+        "title quest3",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+        "new",
+    )
+
+    $ mountQuest.addQuest(
+        mountCharacter.getCharByName("Michelle"),
+        "title quest4",
+        "as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text",
+        "close",
+    )
+
+    $ mountQuest.addQuest(
+        mountCharacter.getCharByName("Michelle"),
+        "title quest5",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old",
+        "inProgress",
+    )
+
+    $ mountQuest.addQuest(
+        mountCharacter.getCharByName("Michelle"),
+        "title quest6",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+        "underDev",
+    )
 
     $ mountCharacter.addChar(
-        "Jane",
+        "Lisa",
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
-        "cqm/assets/images/chars/jane_pic_idle.png",
-        "cqm/assets/images/chars/jane.png",
+        "cqm/assets/images/chars/lisa_pic_idle.png",
+        "",
         {
             "relationship": {
                 "current": 0,
@@ -190,10 +252,87 @@ label cqm:
                 "max": 40
             }
         },
-        False
+        True
     )
 
-    $ mountCharacter.getAllChars[1].addRelationship(15)
-    $ mountCharacter.getAllChars[1].setActive()
+    $ mountCharacter.getCharByName("Lisa").addRelationship(15)
+
+    $ mountCharacter.addChar(
+        "Nina",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
+        "cqm/assets/images/chars/nina_pic_idle.png",
+        "",
+        {
+            "relationship": {
+                "current": 0,
+                "max": 60
+            },
+            "corruption": {
+                "current": 0,
+                "max": 50
+            },
+            "sluttiness": {
+                "current": 0,
+                "max": 30
+            },
+            "awareness": {
+                "current": 0,
+                "max": 40
+            }
+        },
+        True
+    )
+
+    $ mountCharacter.addChar(
+        "Jenny",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
+        "cqm/assets/images/chars/jenny_pic_idle.png",
+        "",
+        {
+            "relationship": {
+                "current": 0,
+                "max": 60
+            },
+            "corruption": {
+                "current": 0,
+                "max": 50
+            },
+            "sluttiness": {
+                "current": 0,
+                "max": 30
+            },
+            "awareness": {
+                "current": 0,
+                "max": 40
+            }
+        },
+        True
+    )
+
+    $ mountCharacter.addChar(
+        "Jill",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
+        "cqm/assets/images/chars/jill_pic_idle.png",
+        "",
+        {
+            "relationship": {
+                "current": 0,
+                "max": 60
+            },
+            "corruption": {
+                "current": 0,
+                "max": 50
+            },
+            "sluttiness": {
+                "current": 0,
+                "max": 30
+            },
+            "awareness": {
+                "current": 0,
+                "max": 40
+            }
+        },
+        True
+    )
 
     return

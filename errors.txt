@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/cqm/gui.rpy", line 45: expected 'simple_expression' not found.
-    font $ defaultFolder + "fonts/ARLRDBD.ttf"
-         ^
+File "game/cqm/engine/screens/filterUnderDevQuests.rpy", line 18: u'show' is not a keyword argument or valid child for the hbox statement.
+    show screen "filterAllQuests"
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue May 24 21:57:15 2022
+Fri May 27 20:23:04 2022

@@ -33,3 +33,7 @@ init python:
             for char in self.chars:
                 if (char.getName == name or char.getCode == name):
                     return char
+
+        @property
+        def getRows(self):
+            return len(self.chars) * 0.206

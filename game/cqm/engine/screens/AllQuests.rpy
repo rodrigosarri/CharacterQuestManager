@@ -1,19 +1,20 @@
 screen allQuests():
-    frame style "mainFrame":
-        add "[configPanel.getBg]"
+    hbox:
+        area(170, 180, 176, 588)
 
-        grid 2 1:
-            textbutton "[configPanel.getTitleChacters]" action charTabButtonActions style "tabButton"
-            textbutton "[configPanel.getTitleQuest]" action questTabButtonActions style "tabButton"
-
-        hbox:
-            ypos 78
+        vpgrid:
+            cols 1
+            rows mountCharacter.getRows
+            mousewheel True
+            # scrollbars "vertical"
+            # vscrollbar_yoffset 29
 
             vbox:
                 spacing 16
+
                 for charButton in mountCharacter.getAllChars:
                     if charButton.getActive:
                         if charButton.getProfilePic:
-                            imagebutton idle charButton.getProfilePic action [Show("quest", char=charButton), questButtonActions] style "charButton"
+                            imagebutton idle charButton.getProfilePic action [Show("quest", char = charButton), questButtonActions] style "charButton"
                         else:
-                            imagebutton idle "noPicPhoto" action [Show("quest", char=charButton), questButtonActions] style "charButton"
+                            imagebutton idle "noPicPhoto" action [Show("quest", char = charButton), questButtonActions] style "charButton"

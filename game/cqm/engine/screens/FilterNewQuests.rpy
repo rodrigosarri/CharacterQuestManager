@@ -1,4 +1,4 @@
-screen filterUnderDevQuests(char = Null):
+screen filterNewQuests(char = Null):
     vbox:
         pos((0.19, 0.2))
         xanchor 1
@@ -15,7 +15,6 @@ screen filterUnderDevQuests(char = Null):
                 textbutton "Under dev." action [Show("filterUnderDevQuests", char = char), filterUnderDevActions] style "filterTitle"
                 textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
 
-
         hbox:
             yoffset 64
 
@@ -28,8 +27,8 @@ screen filterUnderDevQuests(char = Null):
                     spacing 24
                     box_wrap True
 
-                    if (mountQuest.getFilterUnderDevQuests(char.getCode)):
-                        for quests in mountQuest.getFilterUnderDevQuests(char.getCode):
+                    if (mountQuest.getFilterNewQuests(char.getCode)):
+                        for quests in mountQuest.getFilterNewQuests(char.getCode):
                             frame style "questFrame":
                                 add "bgQuest"
 

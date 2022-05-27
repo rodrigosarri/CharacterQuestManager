@@ -18,7 +18,7 @@ init python:
             if (char.getCode):
                 self.charCode = char.getCode
 
-            currentQuestStatus = ["new", "done", "inProgress", "underDev"]
+            currentQuestStatus = ["new", "done", "inProgress", "underDev", "close"]
 
             if (questStatus in currentQuestStatus):
 
@@ -78,6 +78,32 @@ init python:
             if (charCode in self.allQuests):
                 for quest in self.allQuests[charCode]:
                     if (quest.getStatus == "underDev"):
+                        filter.append(quest)
+
+                return filter
+
+            return False
+
+        def getFilterNewQuests(self, charCode):
+            charCode = self.stripAccents(charCode)
+            filter = []
+
+            if (charCode in self.allQuests):
+                for quest in self.allQuests[charCode]:
+                    if (quest.getStatus == "new"):
+                        filter.append(quest)
+
+                return filter
+
+            return False
+
+        def getFilterCloseQuests(self, charCode):
+            charCode = self.stripAccents(charCode)
+            filter = []
+
+            if (charCode in self.allQuests):
+                for quest in self.allQuests[charCode]:
+                    if (quest.getStatus == "close"):
                         filter.append(quest)
 
                 return filter

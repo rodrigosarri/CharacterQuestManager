@@ -1,91 +1,81 @@
 screen filterDoneQuests(char = Null):
-    frame style "mainFrame":
-        add "[configPanel.getBg]"
-
-        grid 2 1:
-            textbutton "[configPanel.getTitleChacters]" action charTabButtonActions style "tabButton"
-            textbutton "[configPanel.getTitleQuest]" action questTabButtonActions style "tabButton"
+    vbox:
+        pos((0.19, 0.2))
+        xanchor 1
+        yanchor 0
 
         hbox:
-            ypos 78
+            spacing 118
 
-            vbox:
-                spacing 16
-                for charButton in mountCharacter.getAllChars:
-                    if charButton.getActive:
-                        if charButton.getProfilePic:
-                            imagebutton idle charButton.getProfilePic action [Show("quest", char=charButton), questButtonActions] style "charButton"
-                        else:
-                            imagebutton idle "noPicPhoto" action [Show("quest", char=charButton), questButtonActions] style "charButton"
+            if (mountQuest.getQuestObjectByChar(char.getCode)):
+                textbutton "All" action [Show("filterAllQuests", char = char), filterAllActions] style "filterTitle"
+                textbutton "New" action [Show("filterNewQuests", char = char), filterNewActions] style "filterTitle"
+                textbutton "Done" action [Show("filterDoneQuests", char = char), filterDoneActions] style "filterTitle"
+                textbutton "In progress" action [Show("filterInProgressQuests", char = char), filterInProgressActions] style "filterTitle"
+                textbutton "Under dev." action [Show("filterUnderDevQuests", char = char), filterUnderDevActions] style "filterTitle"
+                textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
 
-            vbox:
-                hbox:
-                    ypos 32
-                    spacing 261
-                    xoffset 32
+        hbox:
+            yoffset 64
 
-                    if (mountQuest.getQuestObjectByChar(char.getCode)):
-                        textbutton "All" action [Show("filterAllQuests", char = char), filterAllActions] style "filterTitle"
-                        textbutton "Done" action [Show("filterDoneQuests", char = char), filterDoneActions]  style "filterTitle"
-                        textbutton "In progress" action [Show("filterInProgressQuests", char = char), filterInProgressActions]  style "filterTitle"
-                        textbutton "Under dev." action [Show("filterUnderDevQuests", char = char), filterUnderDevActions]  style "filterTitle"
+            area(1, 0, 1342, 600)
+            viewport id "questList":
+                draggable True
+                mousewheel True
 
                 hbox:
-                    yoffset 64
-                    xoffset 32
+                    spacing 24
+                    box_wrap True
 
-                    area(1, 0, 1342, 600)
-                    viewport id "questList":
-                        draggable True
-                        mousewheel True
+                    if (mountQuest.getFilterDoneQuests(char.getCode)):
+                        for quests in mountQuest.getFilterDoneQuests(char.getCode):
+                            frame style "questFrame":
+                                add "bgQuest"
 
-                        hbox:
-                            spacing 24
-                            box_wrap True
+                                hbox:
+                                    vbox:
+                                        xoffset 8
+                                        yoffset 8
+                                        xminimum 1192
 
-                            if (mountQuest.getFilterDoneQuests(char.getCode)):
-                                for quests in mountQuest.getFilterDoneQuests(char.getCode):
-                                    frame style "questFrame":
-                                        add "bgQuest"
+                                        text "[quests.getTitle]"  style "questTitle"
+                                        text "[quests.getDesc]" style "questDesc"
 
                                         hbox:
-                                            vbox:
-                                                xoffset 8
-                                                yoffset 8
-                                                xminimum 1192
+                                            spacing 8
 
-                                                text "[quests.getTitle]"  style "questTitle"
-                                                text "[quests.getDesc]" style "questDesc"
+                                            if (quests.getHint):
+                                                text "[quests.getHint]" style "questHint"
 
-                                                hbox:
-                                                    spacing 8
+                                            if (quests.getProgress):
+                                                text "Progress:" style "questProgress"
+                                                text "[quests.getCurrentProgress]/[quests.getMaxProgress]" style "questProgress"
 
-                                                    if (quests.getHint):
-                                                        text "[quests.getHint]" style "questHint"
+                                            if (quests.getPlace):
+                                                text "Place:" style "questProgress"
+                                                text "[quests.getPlace]" style "questProgress"
 
-                                                    if (quests.getProgress):
-                                                        text "Progress:" style "questProgress"
-                                                        text "[quests.getCurrentProgress]/[quests.getMaxProgress]" style "questProgress"
+                                    vbox:
+                                        ypos 0.5
 
-                                                    if (quests.getPlace):
-                                                        text "Place:" style "questProgress"
-                                                        text "[quests.getPlace]" style "questProgress"
+                                        if (quests.getStatus == "done"):
+                                            add "doneIcon" xpos 0.35
+                                            text "Done" style "titleIconDone"
+                                        elif (quests.getStatus == "inProgress"):
+                                            add "inprogressIcon" xpos 0.2
+                                            text "In progress" style "titleIconInprogress"
+                                        elif (quests.getStatus == "underDev"):
+                                            add "underdevIcon" xpos 0.2
+                                            text "Under dev." style "titleIconUnderDev"
+                                        elif (quests.getStatus == "new"):
+                                            add "newIcon" xpos 0.35
+                                            text "New" style "titleIconNew"
+                                        elif (quests.getStatus == "close"):
+                                            add "closeIcon" xpos 0.35
+                                            text "Close" style "titleIconClose"
+                    else:
+                        frame style "questFrame":
+                            text "This character doesn't have any quests yet" style "questTitle"
+                            add "noQuests" ypos 0.5
 
-                                            vbox:
-                                                ypos 0.5
-
-                                                if (quests.getStatus == "done"):
-                                                    add "doneIcon" xpos 0.35
-                                                    text "Done" style "titleIconDone"
-                                                elif (quests.getStatus == "inProgress"):
-                                                    add "inprogressIcon" xpos 0.2
-                                                    text "In progress" style "titleIconInprogress"
-                                                elif (quests.getStatus == "underDev"):
-                                                    add "underdevIcon" xpos 0.2
-                                                    text "Under dev." style "titleIconInprogress"
-                            else:
-                                frame style "questFrame":
-                                    text "This character doesn't have any quests yet" style "questTitle"
-                                    add "noQuests" ypos 0.5
-
-                        #vbar value YScrollValue("questList")
+            #vbar value YScrollValue("questList")

@@ -115,6 +115,12 @@ style questProgress is text:
     font defaultFolder + "/fonts/ARLRDBD.ttf"
     yanchor -0.7
 
+style titleIconNew is text:
+    size 20
+    color "#e0218a"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+    xpos 0.42
+
 style titleIconDone is text:
     size 20
     color "#75d40f"
@@ -123,8 +129,19 @@ style titleIconDone is text:
 
 style titleIconInprogress is text:
     size 20
+    color "#ff9c00"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style titleIconUnderDev is text:
+    size 20
     color "#d40f0f"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style titleIconClose is text:
+    size 20
+    color "#b01919"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+    xpos 0.42
 
 style mainFrame is default:
     xysize(1580, 872)

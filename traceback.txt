@@ -3,7 +3,23 @@
 While running game code:
   File "game/script.rpy", line 30, in script
     e "You've created a new Ren'Py game."
-Exception: In DynamicImage u'[defaultFolder]images/open_button_idle.png': Could not find substitution 'defaultFolder'.
+  File "game/cqm/engine/screens/Quest.rpy", line 1, in execute
+    screen quest(char = Null):
+  File "game/cqm/engine/screens/Quest.rpy", line 1, in execute
+    screen quest(char = Null):
+  File "game/cqm/engine/screens/Quest.rpy", line 2, in execute
+    vbox:
+  File "game/cqm/engine/screens/Quest.rpy", line 7, in execute
+    hbox:
+  File "game/cqm/engine/screens/Quest.rpy", line 10, in execute
+    if (mountQuest.getQuestObjectByChar(char.getCode)):
+  File "game/cqm/engine/screens/Quest.rpy", line 16, in execute
+    textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
+  File "game/cqm/engine/screens/Quest.rpy", line 16, in keywords
+    textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
+  File "game/cqm/engine/screens/Quest.rpy", line 16, in <module>
+    textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
+NameError: name 'filterCloseActions' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -32,21 +48,33 @@ Full traceback:
     d.visit_all(callback, seen)
   File "renpy/display/core.py", line 568, in visit_all
     d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 441, in visit_all
-    self.child.visit_all(callback, seen=None)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 558, in visit_all
-    for d in self.visit():
-  File "renpy/display/image.py", line 744, in visit
-    self.find_target()
-  File "renpy/display/image.py", line 638, in find_target
-    raise Exception("In DynamicImage %r: Could not find substitution '%s'." % (self.name, str(ke.args[0])))
-Exception: In DynamicImage u'[defaultFolder]images/open_button_idle.png': Could not find substitution 'defaultFolder'.
+  File "renpy/display/screen.py", line 436, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 447, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 637, in update
+    self.screen.function(**self.scope)
+  File "game/cqm/engine/screens/Quest.rpy", line 1, in execute
+    screen quest(char = Null):
+  File "game/cqm/engine/screens/Quest.rpy", line 1, in execute
+    screen quest(char = Null):
+  File "game/cqm/engine/screens/Quest.rpy", line 2, in execute
+    vbox:
+  File "game/cqm/engine/screens/Quest.rpy", line 7, in execute
+    hbox:
+  File "game/cqm/engine/screens/Quest.rpy", line 10, in execute
+    if (mountQuest.getQuestObjectByChar(char.getCode)):
+  File "game/cqm/engine/screens/Quest.rpy", line 16, in execute
+    textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
+  File "game/cqm/engine/screens/Quest.rpy", line 16, in keywords
+    textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
+  File "game/cqm/engine/screens/Quest.rpy", line 16, in <module>
+    textbutton "Close" action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
+NameError: name 'filterCloseActions' is not defined
 
 Windows-10-10.0.22000
 Ren'Py 7.4.11.2266
 CharacterQuestManager 1.0
-Thu May 26 19:13:58 2022
+Fri May 27 20:13:30 2022
