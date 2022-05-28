@@ -16,9 +16,9 @@ Add a button and in your button action add the variable: `cqmAction` see an exam
 I made a simple button if you want to use it for testing and example.
 To see how it works, just add this line to your main `script.rpy` `show screen exampleButton`
 
-![Character screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/CharacterQuestManager/assets/images/example_characters.png)
+![Character screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/assets/images/example_characters.png)
 
-![Quest Log screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/CharacterQuestManager/assets/images/example_questlog.png)
+![Quest Log screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/assets/images/example_questlog.png)
 
 ## version 1.0.0-alpha.0
 
