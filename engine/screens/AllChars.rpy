@@ -1,6 +1,6 @@
 screen allChars():
     hbox:
-        area(170, 180, 176, 588)
+        area(170, 177, 180, 588)
 
         vpgrid:
             cols 1
