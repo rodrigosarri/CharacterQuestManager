@@ -6,13 +6,19 @@ The tool allows you to manage characters and quests using classes and methods ca
 
 # How to use?
 
-Copy the `game/cqm` folder to your project and follow some examples and instructions left in the file: `game/cqm/engine/script.rpy`
+Copy the `CharacterQuestManager` folder to your project and follow some examples and instructions left in the file: `CharacterQuestManager/engine/script.rpy`
 
-In your script.rpy just add this line: `call cqm`
+In your main `script.rpy` file add the line `call cqm`.
 
-![Character screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/game/cqm/assets/images/example_characters.png)
+Add a button and in your button action add the variable: `cqmAction` see an example:
+`textbutton "Menu" action cqmAction style "openButton"`
 
-![Quest Log screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/game/cqm/assets/images/example_questlog.png)
+I made a simple button if you want to use it for testing and example.
+To see how it works, just add this line to your main `script.rpy` `show screen exampleButton`
+
+![Character screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/CharacterQuestManager/assets/images/example_characters.png)
+
+![Quest Log screen example](https://github.com/rodrigosarri/CharacterQuestManager/blob/master/CharacterQuestManager/assets/images/example_questlog.png)
 
 ## version 1.0.0-alpha.0
 
