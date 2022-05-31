@@ -6,6 +6,8 @@ label questsLabel:
 
     # Here is your playground ↓
 
+    # Change status quests, default: new, done, inProgress, underDev, close
+
     # $ mountQuest.setStatusQuest([
     #    "new",
     #    "done",
@@ -14,13 +16,24 @@ label questsLabel:
     #    "close"
     # ])
 
+    # Change status quests title
+
+    # $ mountQuest.setQuestTitle("new", "Start")
+    # $ mountQuest.setQuestTitle("done", "Finish")
+    # $ mountQuest.setQuestTitle("inProgress", "Progressing")
+    # $ mountQuest.setQuestTitle("underDev", "Keep calm")
+    # $ mountQuest.setQuestTitle("close", "Lost")
+
+
+
     # Example of how to build a quest
+
     $ mountQuest.addQuest(
         mountCharacter.getCharByName("Michelle"), # Add which character this quest is
         "Raise the relationship level with your wife", # Quest Title
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a",
         "inProgress", # Quest description (max: 225 characters)
-        "test hint", # Hint or warning for this quest, not required, you can send: ""
+        "test hint",  # Hint or warning for this quest, not required, you can send: ""
         {
             "current": 0,
             "max": 120

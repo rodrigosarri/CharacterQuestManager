@@ -6,6 +6,20 @@ label charactersLabel:
 
     # Here is your playground ↓
 
+    # $ mountCharacter.setStatusTitle("relationship", "???")
+    # $ mountCharacter.setStatusTitle("corruption", "???")
+    # $ mountCharacter.setStatusTitle("sluttiness", "???")
+    # $ mountCharacter.setStatusTitle("awareness", "???")
+    # $ mountCharacter.setStatusTitle("strength", "???")
+    # $ mountCharacter.setStatusTitle("fitness", "!!!")
+    # $ mountCharacter.setStatusTitle("charisma", "123")
+    # $ mountCharacter.setStatusTitle("charm", "°°°°")
+    # $ mountCharacter.setStatusTitle("knowledge", "???")
+
+    # $ mountCharacter.setStatusTitle("respect", "???") # not yet =)
+    # $ mountCharacter.setStatusTitle("libido", "???")  # not yet =)
+    # $ mountCharacter.setStatusTitle("submission", "???")  # not yet =)
+
     # Example of how to assemble a character
     $ mountCharacter.addChar(
         "Michelle", # Name of you character

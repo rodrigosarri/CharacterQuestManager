@@ -2,8 +2,22 @@ init python:
 
     class Characters(object):
 
-        def __init__(self, chars = []):
-            self.chars = chars
+        def __init__(self):
+            self.chars = []
+            self.charStatusTitle = {
+                "relationship": "Relationship",
+                "corruption": "Corruption",
+                "sluttiness": "Sluttiness",
+                "awareness": "Awareness",
+                "strength": "Strength",
+                "fitness": "Fitness",
+                "charisma": "Charisma",
+                "charm": "Charm",
+                "knowledge": "Knowledge",
+                "respect": "Respect",
+                "libido": "Libido",
+                "submission": "Submission"
+            }
 
         def addChar(self, charName, charDesc, charProfilePic, charImage, charStats = {}, isShow = True):
             self.charName = charName
@@ -25,6 +39,31 @@ init python:
                 self.isShow
             ))
 
+        def checkStats(self, stat):
+            stats = [
+                "relationship",
+                "corruption",
+                "sluttiness",
+                "awareness",
+                "strength",
+                "fitness",
+                "charisma",
+                "charm",
+                "knowledge",
+                "respect",
+                "libido",
+                "submission"
+            ]
+
+            if (stat not in stats):
+                return False
+
+            return True
+
+        def setStatusTitle(self, status, title):
+            if (self.checkStats(status)):
+                self.charStatusTitle[status] = title
+
         @property
         def getAllChars(self):
             return self.chars
@@ -37,3 +76,7 @@ init python:
         @property
         def getRows(self):
             return len(self.chars) * 0.206
+
+        def getStatusTitle(self, status):
+            if (self.checkStats(status)):
+                return self.charStatusTitle[status]

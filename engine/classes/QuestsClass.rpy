@@ -2,10 +2,17 @@ init python:
     import unicodedata
 
     class Quests(object):
-        def __init__(self, allQuests = {}, charCode = "", questStatus = ["new", "done", "inProgress", "underDev", "close"]):
+        def __init__(self, allQuests = {}, charCode = ""):
             self.allQuests = allQuests
             self.charCode = ""
-            self.questStatus = questStatus
+            self.questStatus = ["new", "done", "inProgress", "underDev", "close"]
+            self.questsTitle = {
+                "new": "New",
+                "done": "Done",
+                "inProgress": "In Progress",
+                "underDev": "Under Dev",
+                "close": "Close",
+            }
 
         def stripAccents(self, text):
             text = unicodedata.normalize("NFD", text)
@@ -29,6 +36,10 @@ init python:
             for status in questStatus:
                 if (self.checkQuestStatus(status)):
                     self.questStatus.append(status)
+
+        def setQuestTitle(self, status, title):
+            if (self.checkQuestStatus(status)):
+                self.questsTitle[status] = title
 
         def addQuest(self, char, questTitle, questDesc, questStatus, questHint = "", questProgress = {}, questPlace = ""):
             if (char.getCode):
@@ -138,3 +149,7 @@ init python:
                 return 295
             else:
                 return 118
+
+        def getQuestTitle(self, status):
+            if (self.checkQuestStatus(status)):
+                return self.questsTitle[status]
