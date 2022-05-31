@@ -2,9 +2,10 @@ init python:
     import unicodedata
 
     class Quests(object):
-        def __init__(self, allQuests = {}, charCode = ""):
+        def __init__(self, allQuests = {}, charCode = "", questStatus = ["new", "done", "inProgress", "underDev", "close"]):
             self.allQuests = allQuests
             self.charCode = ""
+            self.questStatus = questStatus
 
         def stripAccents(self, text):
             text = unicodedata.normalize("NFD", text)
@@ -14,13 +15,26 @@ init python:
             text = text.lower()
             return str(text)
 
+        def checkQuestStatus(self, status):
+            currentQuestStatus = ["new", "done", "inProgress", "underDev", "close"]
+
+            if (status not in currentQuestStatus):
+                return False
+
+            return True
+
+        def setStatusQuest(self, questStatus):
+            self.questStatus = []
+
+            for status in questStatus:
+                if (self.checkQuestStatus(status)):
+                    self.questStatus.append(status)
+
         def addQuest(self, char, questTitle, questDesc, questStatus, questHint = "", questProgress = {}, questPlace = ""):
             if (char.getCode):
                 self.charCode = char.getCode
 
-            currentQuestStatus = ["new", "done", "inProgress", "underDev", "close"]
-
-            if (questStatus in currentQuestStatus):
+            if (self.checkQuestStatus(questStatus)):
 
                 if (self.charCode not in self.allQuests):
                     self.allQuests[self.charCode] = []
@@ -109,3 +123,18 @@ init python:
                 return filter
 
             return False
+
+        @property
+        def getQuestStatus(self):
+            return self.questStatus
+
+        @property
+        def getSpacingStatus(self):
+            if (len(self.questStatus) == 5):
+                return 118
+            elif (len(self.questStatus) == 4):
+                return 172
+            elif (len(self.questStatus) == 3):
+                return 295
+            else:
+                return 118

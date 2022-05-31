@@ -6,6 +6,14 @@ label questsLabel:
 
     # Here is your playground ↓
 
+    # $ mountQuest.setStatusQuest([
+    #    "new",
+    #    "done",
+    #    "inProgress",
+    #    "underDev",
+    #    "close"
+    # ])
+
     # Example of how to build a quest
     $ mountQuest.addQuest(
         mountCharacter.getCharByName("Michelle"), # Add which character this quest is

@@ -24,6 +24,7 @@ init python:
                 "strength",
                 "fitness",
                 "charisma",
+                "charm",
                 "knowledge",
                 "respect",
                 "libido",
@@ -104,6 +105,24 @@ init python:
                 else:
                     self.charStats["charisma"]["current"] = self.charStats["charisma"]["max"]
 
+        def setCharm(self, num = 0):
+            if ("charm" in self.charStats):
+                num = int(num)
+
+                if (num <= self.charStats["charm"]["max"]):
+                    self.charStats["charm"]["current"] = num
+                else:
+                    self.charStats["charm"]["current"] = self.charStats["charm"]["max"]
+
+        def setKnowledge(self, num = 0):
+            if ("knowledge" in self.charStats):
+                num = int(num)
+
+                if (num <= self.charStats["knowledge"]["max"]):
+                    self.charStats["knowledge"]["current"] = num
+                else:
+                    self.charStats["knowledge"]["current"] = self.charStats["knowledge"]["max"]
+
         def addRelationship(self, num = 1):
             if ("relationship" in self.charStats):
                 current = self.charStats["relationship"]["current"]
@@ -174,6 +193,26 @@ init python:
                 else:
                     self.charStats["charisma"]["current"] = self.charStats["charisma"]["max"]
 
+        def addCharm(self, num = 1):
+            if ("charm" in self.charStats):
+                current = self.charStats["charm"]["current"]
+                num = int(num)
+
+                if ((current + num) <= self.charStats["fitness"]["max"]):
+                    self.charStats["charm"]["current"] += num
+                else:
+                    self.charStats["charm"]["current"] = self.charStats["charm"]["max"]
+
+        def addKnowledge(self, num = 1):
+            if ("knowledge" in self.charStats):
+                current = self.charStats["knowledge"]["current"]
+                num = int(num)
+
+                if ((current + num) <= self.charStats["fitness"]["max"]):
+                    self.charStats["knowledge"]["current"] += num
+                else:
+                    self.charStats["knowledge"]["current"] = self.charStats["knowledge"]["max"]
+
         def subRelationship(self, num = 1):
             if ("relationship" in self.charStats):
                 current = self.charStats["relationship"]["current"]
@@ -243,6 +282,26 @@ init python:
                     self.charStats["charisma"]["current"] -= num
                 else:
                     self.charStats["charisma"]["current"] = 0
+
+        def subCharm(self, num = 1):
+            if ("charm" in self.charStats):
+                current = self.charStats["charm"]["current"]
+                num = int(num)
+
+                if ((current - num) >= 0):
+                    self.charStats["charm"]["current"] -= num
+                else:
+                    self.charStats["charm"]["current"] = 0
+
+        def subKnowledge(self, num = 1):
+            if ("knowledge" in self.charStats):
+                current = self.charStats["knowledge"]["current"]
+                num = int(num)
+
+                if ((current - num) >= 0):
+                    self.charStats["knowledge"]["current"] -= num
+                else:
+                    self.charStats["knowledge"]["current"] = 0
 
         def setStats(self, stats):
             for stat in stats:
@@ -326,6 +385,14 @@ init python:
             return self.charStats["charisma"]["current"]
 
         @property
+        def getCurrentCharm(self):
+            return self.charStats["charm"]["current"]
+
+        @property
+        def getCurrentKnowledge(self):
+            return self.charStats["knowledge"]["current"]
+
+        @property
         def getMaxRelationship(self):
             return self.charStats["relationship"]["max"]
 
@@ -352,6 +419,14 @@ init python:
         @property
         def getMaxCharisma(self):
             return self.charStats["charisma"]["max"]
+
+        @property
+        def getMaxCharm(self):
+            return self.charStats["charm"]["max"]
+
+        @property
+        def getMaxKnowledge(self):
+            return self.charStats["knowledge"]["max"]
 
         @property
         def getTotalRelationship(self):
@@ -443,3 +518,29 @@ init python:
             total = self.getTotalCharisma
 
             return defaultFolder + "images/speaker/speaker" + str(total) + ".png"
+
+        @property
+        def getTotalCharm(self):
+            current = float(self.charStats["charm"]["current"])
+            max = float(self.charStats["charm"]["max"])
+            total = int(round(current/max * 100))
+            return total
+
+        @property
+        def getCharming(self):
+            total = self.getTotalCharm
+
+            return defaultFolder + "images/charm/charm" + str(total) + ".png"
+
+        @property
+        def getTotalKnowledge(self):
+            current = float(self.charStats["knowledge"]["current"])
+            max = float(self.charStats["knowledge"]["max"])
+            total = int(round(current/max * 100))
+            return total
+
+        @property
+        def getBook(self):
+            total = self.getTotalKnowledge
+
+            return defaultFolder + "images/book/book" + str(total) + ".png"

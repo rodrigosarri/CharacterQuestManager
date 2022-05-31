@@ -109,6 +109,18 @@ style statsCharisma is text:
     color "#fe7295"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
+style statsCharm is text:
+    size 25
+    xalign 0.5
+    color "#c2a23d"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsKnowledge is text:
+    size 25
+    xalign 0.5
+    color "#54321f"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
 style filterTitle is button:
     hover_background Transform("[defaultFolder]images/arrow_down.png", align = (0.5, 1.4))
     selected_idle_background Transform("[defaultFolder]images/arrow_down.png", align = (0.5, 1.4))

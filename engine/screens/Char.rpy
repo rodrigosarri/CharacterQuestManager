@@ -50,9 +50,23 @@ screen char(type = Null):
                             if (type.checkStatsChar("charisma")):
                                 vbox:
                                     spacing 8
-                                    text "Charisma" style "statsCharisma"
+                                    text "Charisma" style "statsTitle"
                                     add "[type.getSpeaker]" xalign .5
                                     text "[type.getCurrentCharisma]/[type.getMaxCharisma]" style "statsCharisma"
+
+                            if (type.checkStatsChar("charm")):
+                                vbox:
+                                    spacing 8
+                                    text "Charm" style "statsTitle"
+                                    add "[type.getCharming]" xalign .5
+                                    text "[type.getCurrentCharm]/[type.getMaxCharm]" style "statsCharm"
+
+                            if (type.checkStatsChar("knowledge")):
+                                vbox:
+                                    spacing 8
+                                    text "Knowledge" style "statsTitle"
+                                    add "[type.getBook]" xalign .5
+                                    text "[type.getCurrentKnowledge]/[type.getMaxKnowledge]" style "statsKnowledge"
 
                             if (type.checkStatsChar("corruption")):
                                 vbox:

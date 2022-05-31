@@ -84,7 +84,7 @@ label panelLabel:
         Hide("filterUnderDevQuests"),
         Hide("filterCloseQuests"),
         Hide("filterNewQuests"),
-        Hide("char")
+        Hide("char"),
     ]
 
     $ filterDoneActions = [
