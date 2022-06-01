@@ -1,20 +1,20 @@
 screen allChars():
-    hbox:
-        area(170, 177, 180, 588)
+    vpgrid:
+        xpos 170
+        ypos 178
+        xysize(177, 616)
+        cols 1
+        mousewheel True
+        spacing 8
+        transpose True
 
-        vpgrid:
-            cols 1
-            rows mountCharacter.getRows
-            mousewheel True
-            # scrollbars "vertical"
-            # vscrollbar_yoffset 29
-
-            vbox:
-                spacing 16
-
-                for charButton in mountCharacter.getAllChars:
-                    if charButton.getActive:
-                        if charButton.getProfilePic:
-                            imagebutton idle charButton.getProfilePic action [Show("char", type=charButton), charButtonActions] style "charButton"
-                        else:
-                            imagebutton idle "noPicPhoto" action [Show("char", type=charButton), charButtonActions] style "charButton"
+        for charButton in mountCharacter.getAllChars:
+            if (charButton.getActive):
+                if (charButton.getProfilePic):
+                    imagebutton idle charButton.getProfilePic:
+                        style "charButton"
+                        action [Show("char", type = charButton), charButtonActions]
+                else:
+                    imagebutton idle "noPicPhoto":
+                        style "charButton"
+                        action [Show("char", type = charButton), charButtonActions]

@@ -19,7 +19,7 @@ init python:
                 "submission": "Submission"
             }
 
-        def addChar(self, charName, charDesc, charProfilePic, charImage, charStats = {}, isShow = True):
+        def addChar(self, charName, charDesc, charProfilePic = "", charImage = "", charStats = {}, isShow = True):
             self.charName = charName
             self.charDesc = charDesc
             self.charProfilePic = charProfilePic
@@ -72,10 +72,6 @@ init python:
             for char in self.chars:
                 if (char.getName == name or char.getCode == name):
                     return char
-
-        @property
-        def getRows(self):
-            return len(self.chars) * 0.206
 
         def getStatusTitle(self, status):
             if (self.checkStats(status)):

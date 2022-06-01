@@ -22,63 +22,72 @@ label charactersLabel:
 
     # Example of how to assemble a character
     $ mountCharacter.addChar(
-        "Michelle", # Name of you character
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", # Description of you character (max: 570 characters)
-        "[defaultFolder]images/chars/michelle_pic_idle.png", # Profile picture of the character that will be on the button
-        "", # Image that will be next to the character description
+        "Emma", # Name of you character
+        "This is the description of your character, in this case, the description of the fictional character Emma. This description must be a maximum of 570 characters.", # Description of you character (max: 570 characters)
+        defaultFolder + "images/chars/emma_pic_idle.png", # Profile picture of the character that will be on the button
+        defaultFolder + "images/chars/emma.png", # Char image
         {                            # Characters stats
-            "knowledge": {           # Available stats: relationship, corruption, sluttiness, awareness, strength, fitness, charisma, knowledge,
-                "current": 0,        # respect, libido and submission
+            "relationship": {        # Available stats: relationship, corruption, sluttiness, awareness, strength, fitness, charisma, knowledge,
+                "current": 0,        # charm, respect, libido and submission
                 "max": 60            #
             },                       # You need to send the stats information in object format
-            "fitness": {             # If you do not submit any information, the character will not display stats
-                "current": 0,        # Some characters may only have events and don't need these stats
-                "max": 50            # Max stats per character is currently four
+            "charisma": {            # If you do not submit any information, the character will not display stats
+                "current": 10,       # Some characters may only have events and don't need these stats
+                "max": 70            # Max stats per character is currently four
             },                       #
-            "charisma": {            # You need to send the current and maximum information about each of the stats
-                "current": 0,        # If you do not submit this information, current will be zero and maximum will be one hundred
-                "max": 30
+            "knowledge": {           # You need to send the current and maximum information about each of the stats
+                "current": 20,       # If you do not submit this information, current will be zero and maximum will be one hundred
+                "max": 80
             },
-            "charm": {
-                "current": 0,
-                "max": 40
+            "fitness": {
+                "current": 30,
+                "max": 80
             }
         },
         True # Character is active (default is True)
     )
 
-    $ mountCharacter.getCharByName("Michelle").setKnowledge(10)
-    $ mountCharacter.getCharByName("Michelle").addKnowledge(30)  # Increasing the character's relationship
-    $ mountCharacter.getCharByName("Michelle").subKnowledge(5)   # Increasing the character's relationship
-    $ mountCharacter.getCharByName("Michelle").addCorruption(15) # You can also increase it using the char name as a parameter instead of the number
-    $ mountCharacter.getCharByName("Michelle").addSluttiness(25) # The name can be capitalized or lowercase, it doesn't matter
+    $ mountCharacter.getCharByName("Emma").setRelationship(10)  # Setting a specific value
+    $ mountCharacter.getCharByName("Emma").addRelationship(30)  # Increasing the character's relationship by 30
+    $ mountCharacter.getCharByName("Emma").subRelationship(5)   # Decreasing the character's relationship by 5
 
     $ mountCharacter.addChar(
-        "Lisa",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
-        "[defaultFolder]images/chars/lisa_pic_idle.png",
-        "",
+        "James",
+        "Another character description, now of the fictional character James. See that James' status is different from Emma's status.",
+        defaultFolder + "images/chars/james_pic_idle.png",
+        defaultFolder + "images/chars/james.png",
+        {
+            "strength": {
+                "current": 50,
+                "max": 120
+            },
+            "charm": {
+                "current": 5,
+                "max": 50
+            }
+        }
     )
 
-    $ mountCharacter.getCharByName("Lisa").addRelationship(15)
+    $ mountCharacter.getCharByName("James").setStrength(10)  # Setting a specific value
+    $ mountCharacter.getCharByName("James").addStrength(30)  # Increasing the character's strength by 15
+    $ mountCharacter.getCharByName("James").subStrength(5)   # Decreasing the character's strength by 5
 
     $ mountCharacter.addChar(
-        "Nina",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
-        "[defaultFolder]images/chars/nina_pic_idle.png",
+        "Isabella",
+        "This character does not have a profile picture, but can have an internal picture.",
         "",
+        defaultFolder + "images/chars/isabella.png",
+    )
+
+    $ mountCharacter.addChar(
+        "Olivia",
+        "This is a character that does not have a photo defined at the time it was assembled, so an image warns that this character is without a photo. And this character also doesn't have any defined stats.",
+        defaultFolder + "images/chars/olivia_pic_idle.png",
     )
 
     $ mountCharacter.addChar(
         "Jenny",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
-        "[defaultFolder]images/chars/jenny_pic_idle.png",
-        "",
+        "This character has neither a profile picture nor a description picture.",
     )
 
-    $ mountCharacter.addChar(
-        "Jill",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",
-        "[defaultFolder]images/chars/jill_pic_idle.png",
-        "",
-    )
+    return

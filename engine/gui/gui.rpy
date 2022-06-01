@@ -18,11 +18,9 @@ style charButton is button:
     xpos 0
     ypos 0
     ymargin 32
-    xysize (177, 150)
+    xysize (162, 150)
     padding [16, 10, 16, 8]
-    hover_background "[defaultFolder]images/bg/[configPanel.getColor]/selected_char_idle.png"
-    selected_idle_background "[defaultFolder]images/bg/[configPanel.getColor]/selected_char_idle.png"
-    selected_hover_background "[defaultFolder]images/bg/[configPanel.getColor]/selected_char_idle.png"
+    background "[defaultFolder]images/bg/[configPanel.getColor]/selected_char_idle.png"
 
 style tabButton is button:
     xpos 0
