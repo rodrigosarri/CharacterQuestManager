@@ -42,7 +42,11 @@ label charactersLabel:
             "fitness": {
                 "current": 30,
                 "max": 80
-            }
+            },
+            "corruption": {
+                "current": 30,
+                "max": 80
+            },
         },
         True # Character is active (default is True)
     )

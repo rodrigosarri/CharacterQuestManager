@@ -1,90 +1,57 @@
 screen char(type = Null):
     if (type != Null):
-        hbox:
-            pos(400, 0.2)
-            xanchor 0.0
-            yanchor 0
+        frame:
+            xysize(250, 802)
+            pos(365, 190)
+            style "defaultFrame"
 
-            hbox:
-                vbox:
-                    if (type.getImage):
-                        add "[type.getImage]" pos((32, 64))
-                    else:
-                        add "noPhoto" pos((32, 64))
+            if (type.getImage):
+                add Transform(type.getImage, align = (0.0, 0.5)):
+                    xpos 33
+            else:
+                add Transform("noPhoto", align = (0.0, 0.5)):
+                    xpos 33
 
-                vbox:
-                    text "[type.getName]" pos((96, 64)) style "charTitle"
-                    text "[type.getDesc]" pos((96, 80)) style "charDesc"
+        frame:
+            xysize(1135, 802)
+            pos(615, 190)
+            style "defaultFrame"
 
-                    if (type.getTotalStats > 0):
-                        add "bgStats" pos((96, 116))
+            vbox:
+                ypos 140
+                xpos 50
+                spacing 30
 
-                    hbox:
-                        spacing 100
-                        xpos 136
-                        ypos -80
+                text type.getName:
+                    style "charTitle"
 
-                        if (type.getTotalStats > 0):
+                text type.getDesc:
+                    style "charDesc"
 
-                            if (type.checkStatsChar("relationship")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("relationship") style "statsTitle"
-                                    add "[type.getHeart]" xalign .5
-                                    text "[type.getCurrentRelationship]/[type.getMaxRelationship]" style "statsRelationship"
+                if (type.getTotalStats > 0):
+                    frame:
+                        style "statsFrame"
+                        add "bgStats"
 
-                            if (type.checkStatsChar("charisma")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("charisma") style "statsTitle"
-                                    add "[type.getSpeaker]" xalign .5
-                                    text "[type.getCurrentCharisma]/[type.getMaxCharisma]" style "statsCharisma"
+                        area(0, 0, 899, 228)
+                        viewport id "statsList":
+                            draggable True
+                            mousewheel True
+                            pos(32, 32)
 
-                            if (type.checkStatsChar("strength")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("strength") style "statsTitle"
-                                    add "[type.getMuscle]"  xalign .5
-                                    text "[type.getCurrentStrength]/[type.getMaxStrength]" style "statsStrength"
+                            hbox:
+                                spacing 80
 
-                            if (type.checkStatsChar("charm")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("charm") style "statsTitle"
-                                    add "[type.getCharming]" xalign .5
-                                    text "[type.getCurrentCharm]/[type.getMaxCharm]" style "statsCharm"
+                                if (type.getTotalStats > 0):
+                                    for stats in type.getAllStatsChar:
+                                        vbox:
+                                            spacing 8
 
-                            if (type.checkStatsChar("fitness")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("fitness") style "statsTitle"
-                                    add "[type.getRunner]"  xalign .5
-                                    text "[type.getCurrentFitness]/[type.getMaxFitness]" style "statsFitness"
+                                            text type.getAllStatsChar[stats]["title"]:
+                                                style "statsTitle"
 
-                            if (type.checkStatsChar("knowledge")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("knowledge") style "statsTitle"
-                                    add "[type.getBook]" xalign .5
-                                    text "[type.getCurrentKnowledge]/[type.getMaxKnowledge]" style "statsKnowledge"
+                                            add type.getAllStatsChar[stats]["icon"]:
+                                                xalign .5
 
-                            if (type.checkStatsChar("corruption")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("corruption") style "statsTitle"
-                                    add "[type.getDevil]" xalign .5
-                                    text "[type.getCurrentCorruption]/[type.getMaxCorruption]" style "statsCorruption"
-
-                            if (type.checkStatsChar("sluttiness")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("sluttiness") style "statsTitle"
-                                    add "[type.getPanties]"  xalign .5
-                                    text "[type.getCurrentSluttiness]/[type.getMaxSluttiness]" style "statsSluttiness"
-
-                            if (type.checkStatsChar("awareness")):
-                                vbox:
-                                    spacing 8
-                                    text mountCharacter.getStatusTitle("awareness") style "statsTitle"
-                                    add "[type.getLight]"  xalign .5
-                                    text "[type.getCurrentAwareness]/[type.getMaxAwareness]" style "statsAwareness"
+                                            text type.getAllStatsChar[stats]["info"]:
+                                                style type.getAllStatsChar[stats]["style"]

@@ -20,22 +20,67 @@ style charButton is button:
     ymargin 32
     xysize (162, 150)
     padding [16, 10, 16, 8]
-    background "[defaultFolder]images/bg/[configPanel.getColor]/selected_char_idle.png"
+    # background "[defaultFolder]images/bg/[configPanel.getColor]/selected_char_idle.png"
 
-style tabButton is button:
-    xpos 0
+style tabButton1 is button:
+    xpos 175
     ypos 0
-    xysize (404, 78)
-    background "[defaultFolder]images/bg/[configPanel.getColor]/tab_hover.png"
-    hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab_idle.png"
-    selected_idle_background "[defaultFolder]images/bg/[configPanel.getColor]/tab_idle.png"
-    selected_hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab_idle.png"
+    xysize (361, 133)
+    background "[defaultFolder]images/tabs/tab_button1.png"
+    hover_background "[defaultFolder]images/tabs/tab_button1_hover.png"
+    selected_idle_background "[defaultFolder]images/tabs/tab_button1_hover.png"
+    selected_hover_background "[defaultFolder]images/tabs/tab_button1_hover.png"
 
-style tabButton_text is text:
-    yalign .5
+style tabButton1_text is text:
+    ypos 17
     xalign .5
     color "#333333"
-    size 64
+    size 60
+
+style tabButton2 is button:
+    xpos 145
+    ypos 0
+    xysize (373, 104)
+    background "[defaultFolder]images/tabs/tab_button2.png"
+    hover_background "[defaultFolder]images/tabs/tab_button2_hover.png"
+    selected_idle_background "[defaultFolder]images/tabs/tab_button2_hover.png"
+    selected_hover_background "[defaultFolder]images/tabs/tab_button2_hover.png"
+
+style tabButton2_text is text:
+    ypos 17
+    xalign .5
+    color "#333333"
+    size 60
+
+style tabButton3 is button:
+    xpos 130
+    ypos 0
+    xysize (373, 104)
+    background "[defaultFolder]images/tabs/tab_button3.png"
+    hover_background "[defaultFolder]images/tabs/tab_button3_hover.png"
+    selected_idle_background "[defaultFolder]images/tabs/tab_button3_hover.png"
+    selected_hover_background "[defaultFolder]images/tabs/tab_button3_hover.png"
+
+style tabButton3_text is text:
+    ypos 17
+    xalign .5
+    color "#333333"
+    size 60
+
+style tabButton4 is button:
+    xpos 115
+    ypos 0
+    xysize (353, 133)
+    background "[defaultFolder]images/tabs/tab_button4.png"
+    hover_background "[defaultFolder]images/tabs/tab_button4_hover.png"
+    selected_idle_background "[defaultFolder]images/tabs/tab_button4_hover.png"
+    selected_hover_background "[defaultFolder]images/tabs/tab_button4_hover.png"
+
+style tabButton4_text is text:
+    ypos 17
+    xalign .5
+    color "#333333"
+    size 60
 
 style tabButtonIcon is button:
     xpos 0
@@ -56,7 +101,7 @@ style charDesc is text:
     color "333333"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
     line_leading 8
-    xmaximum 971
+    xmaximum 963
     justify True
 
 style statsTitle is text:
@@ -65,40 +110,10 @@ style statsTitle is text:
     color "#000000"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
-style statsRelationship is text:
-    size 25
-    xalign 0.5
-    color "#72ff00"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-
-style statsCorruption is text:
-    size 25
-    xalign 0.5
-    color "#ff0000"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-
-style statsSluttiness is text:
-    size 25
-    xalign 0.5
-    color "#005aff"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-
 style statsAwareness is text:
     size 25
     xalign 0.5
-    color "#fff600"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-
-style statsStrength is text:
-    size 25
-    xalign 0.5
-    color "#f2570e"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-
-style statsFitness is text:
-    size 25
-    xalign 0.5
-    color "#a36826"
+    color "#fffb04"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style statsCharisma is text:
@@ -110,13 +125,61 @@ style statsCharisma is text:
 style statsCharm is text:
     size 25
     xalign 0.5
-    color "#c2a23d"
+    color "#3f456f"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsCorruption is text:
+    size 25
+    xalign 0.5
+    color "#a031b6"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsFitness is text:
+    size 25
+    xalign 0.5
+    color "#cae963"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style statsKnowledge is text:
     size 25
     xalign 0.5
-    color "#54321f"
+    color "#3c7dbd"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsLibido is text:
+    size 25
+    xalign 0.5
+    color "#fd4e0f"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsRelationship is text:
+    size 25
+    xalign 0.5
+    color "#9b0909"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsRespect is text:
+    size 25
+    xalign 0.5
+    color "#338372"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsSluttiness is text:
+    size 25
+    xalign 0.5
+    color "#c30068"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsStrength is text:
+    size 25
+    xalign 0.5
+    color "#241d34"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style statsSubmission is text:
+    size 25
+    xalign 0.5
+    color "#88303c"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style filterTitle is button:
@@ -200,6 +263,30 @@ style mainFrame is default:
     xmargin 0
     ymargin 0
     modal True
+    background None
+
+style defaultFrame is default:
+    xanchor 0.0
+    yanchor 0.0
+    xalign 0
+    yalign 0
+    xpadding 0
+    ypadding 0
+    xmargin 0
+    ymargin 0
+    modal False
+    background None
+
+
+style statsFrame is default:
+    xysize(963, 228)
+    xalign 0
+    yalign 0
+    xpadding 0
+    ypadding 0
+    xmargin 0
+    ymargin 0
+    modal False
     background None
 
 style questFrame is default:

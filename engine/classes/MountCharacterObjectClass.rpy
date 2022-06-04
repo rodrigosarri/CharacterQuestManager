@@ -15,23 +15,59 @@ init python:
 
             self.isShow = isShow
 
-        def checkStatsList(self, stat):
-            stats = [
-                "relationship",
-                "corruption",
-                "sluttiness",
-                "awareness",
-                "strength",
-                "fitness",
-                "charisma",
-                "charm",
-                "knowledge",
-                "respect",
-                "libido",
-                "submission"
-            ]
+            self.configStats = {
+                "relationship": {
+                    "title": "Relationship",
+                    "style": "statsRelationship"
+                },
+                "corruption": {
+                    "title": "Corruption",
+                    "style": "statsCorruption"
+                },
+                "sluttiness": {
+                    "title": "Sluttiness",
+                    "style": "statsSluttiness"
+                },
+                "awareness": {
+                    "title": "Awareness",
+                    "style": "statsAwareness"
+                },
+                "strength": {
+                    "title": "Strength",
+                    "style": "statsStrength"
+                },
+                "fitness": {
+                    "title": "Fitness",
+                    "style": "statsFitness"
+                },
+                "charisma": {
+                    "title": "Charisma",
+                    "style": "statsCharisma"
+                },
+                "charm": {
+                    "title": "Charm",
+                    "style": "statsCharm"
+                },
+                "knowledge": {
+                    "title": "Knowledge",
+                    "style": "statsKnowledge"
+                },
+                "respect": {
+                    "title": "Respect",
+                    "style": "statsRespect"
+                },
+                "libido": {
+                    "title": "Libido",
+                    "style": "statsLibido"
+                },
+                "submission": {
+                    "title": "Submission",
+                    "style": "statsSubmission"
+                },
+            }
 
-            if (stat not in stats):
+        def checkStatsList(self, stat):
+            if (stat not in self.configStats):
                 return False
 
             return True
@@ -544,3 +580,29 @@ init python:
             total = self.getTotalKnowledge
 
             return defaultFolder + "images/book/book" + str(total) + ".png"
+
+        def getTotalByStats(self, stat):
+            current = float(self.charStats[stat]["current"])
+            max = float(self.charStats[stat]["max"])
+            total = int(round(current/max * 100))
+            return total
+
+        def getIconByStats(self, stat):
+            total = self.getTotalByStats(stat)
+
+            return defaultFolder + "images/character_stats/" + stat + "/" + str(total) + ".png"
+
+        def getInfoByStats(self, stat):
+            return str(self.charStats[stat]["current"]) + "/" + str(self.charStats[stat]["max"])
+
+        @property
+        def getAllStatsChar(self):
+            statsChar = {}
+
+            for stats in self.charStats:
+                if (stats in self.configStats):
+                    statsChar[stats] = self.configStats[stats]
+                    statsChar[stats]["icon"] = self.getIconByStats(stats)
+                    statsChar[stats]["info"] = self.getInfoByStats(stats)
+
+            return statsChar
