@@ -47,7 +47,7 @@ screen char(type = Null):
                                         vbox:
                                             spacing 8
 
-                                            text type.getAllStatsChar[stats]["title"]:
+                                            text mountCharacter.getStatusTitle(stats):
                                                 style "statsTitle"
 
                                             add type.getAllStatsChar[stats]["icon"]:

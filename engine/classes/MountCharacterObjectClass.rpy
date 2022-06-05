@@ -11,57 +11,45 @@ init python:
             self.charStats = charStats
 
             if (not charStats):
-                self.setStats(charStats)
+                self.setAllStats(charStats)
 
             self.isShow = isShow
 
             self.configStats = {
                 "relationship": {
-                    "title": "Relationship",
                     "style": "statsRelationship"
                 },
                 "corruption": {
-                    "title": "Corruption",
                     "style": "statsCorruption"
                 },
                 "sluttiness": {
-                    "title": "Sluttiness",
                     "style": "statsSluttiness"
                 },
                 "awareness": {
-                    "title": "Awareness",
                     "style": "statsAwareness"
                 },
                 "strength": {
-                    "title": "Strength",
                     "style": "statsStrength"
                 },
                 "fitness": {
-                    "title": "Fitness",
                     "style": "statsFitness"
                 },
                 "charisma": {
-                    "title": "Charisma",
                     "style": "statsCharisma"
                 },
                 "charm": {
-                    "title": "Charm",
                     "style": "statsCharm"
                 },
                 "knowledge": {
-                    "title": "Knowledge",
                     "style": "statsKnowledge"
                 },
                 "respect": {
-                    "title": "Respect",
                     "style": "statsRespect"
                 },
                 "libido": {
-                    "title": "Libido",
                     "style": "statsLibido"
                 },
                 "submission": {
-                    "title": "Submission",
                     "style": "statsSubmission"
                 },
             }
@@ -78,268 +66,40 @@ init python:
 
             return True
 
-        def setRelationship(self, num = 0):
-            if ("relationship" in self.charStats):
+        def setImage(self, charImage):
+            self.charImage = charImage
+
+        def setStats(self, stats, num = 0):
+            if (stats in self.charStats):
                 num = int(num)
 
-                if (num <= self.charStats["relationship"]["max"]):
-                    self.charStats["relationship"]["current"] = num
+                if (num <= self.charStats[stats]["max"]):
+                    self.charStats[stats]["current"] = num
                 else:
-                    self.charStats["relationship"]["current"] = self.charStats["relationship"]["max"]
+                    self.charStats[stats]["current"] = self.charStats[stats]["max"]
 
-        def setCorruption(self, num = 0):
-            if ("corruption" in self.charStats):
+        def addStats(self, stats, num = 1):
+            if (stats in self.charStats):
+                current = self.charStats[stats]["current"]
                 num = int(num)
 
-                if (num <= self.charStats["corruption"]["max"]):
-                    self.charStats["corruption"]["current"] = num
+                if ((current + num) <= self.charStats[stats]["max"]):
+                    self.charStats[stats]["current"] += num
                 else:
-                    self.charStats["corruption"]["current"] = self.charStats["corruption"]["max"]
+                    self.charStats[stats]["current"] = self.charStats[stats]["max"]
 
-        def setSluttiness(self, num = 0):
-            if ("sluttiness" in self.charStats):
-                num = int(num)
 
-                if (num <= self.charStats["sluttiness"]["max"]):
-                    self.charStats["sluttiness"]["current"] = num
-                else:
-                    self.charStats["sluttiness"]["current"] = self.charStats["sluttiness"]["max"]
-
-        def setAwareness(self, num = 0):
-            if ("awareness" in self.charStats):
-                num = int(num)
-
-                if (num <= self.charStats["awareness"]["max"]):
-                    self.charStats["awareness"]["current"] = num
-                else:
-                    self.charStats["awareness"]["current"] = self.charStats["awareness"]["max"]
-
-        def setStrength(self, num = 0):
-            if ("strength" in self.charStats):
-                num = int(num)
-
-                if (num <= self.charStats["strength"]["max"]):
-                    self.charStats["strength"]["current"] = num
-                else:
-                    self.charStats["strength"]["current"] = self.charStats["strength"]["max"]
-
-        def setFitness(self, num = 0):
-            if ("fitness" in self.charStats):
-                num = int(num)
-
-                if (num <= self.charStats["fitness"]["max"]):
-                    self.charStats["fitness"]["current"] = num
-                else:
-                    self.charStats["fitness"]["current"] = self.charStats["fitness"]["max"]
-
-        def setCharisma(self, num = 0):
-            if ("charisma" in self.charStats):
-                num = int(num)
-
-                if (num <= self.charStats["fitness"]["max"]):
-                    self.charStats["charisma"]["current"] = num
-                else:
-                    self.charStats["charisma"]["current"] = self.charStats["charisma"]["max"]
-
-        def setCharm(self, num = 0):
-            if ("charm" in self.charStats):
-                num = int(num)
-
-                if (num <= self.charStats["charm"]["max"]):
-                    self.charStats["charm"]["current"] = num
-                else:
-                    self.charStats["charm"]["current"] = self.charStats["charm"]["max"]
-
-        def setKnowledge(self, num = 0):
-            if ("knowledge" in self.charStats):
-                num = int(num)
-
-                if (num <= self.charStats["knowledge"]["max"]):
-                    self.charStats["knowledge"]["current"] = num
-                else:
-                    self.charStats["knowledge"]["current"] = self.charStats["knowledge"]["max"]
-
-        def addRelationship(self, num = 1):
-            if ("relationship" in self.charStats):
-                current = self.charStats["relationship"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["relationship"]["max"]):
-                    self.charStats["relationship"]["current"] += num
-                else:
-                    self.charStats["relationship"]["current"] = self.charStats["relationship"]["max"]
-
-        def addCorruption(self, num = 1):
-            if ("corruption" in self.charStats):
-                current = self.charStats["corruption"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["corruption"]["max"]):
-                    self.charStats["corruption"]["current"] += num
-                else:
-                    self.charStats["corruption"]["current"] = self.charStats["corruption"]["max"]
-
-        def addSluttiness(self, num = 1):
-            if ("sluttiness" in self.charStats):
-                current = self.charStats["sluttiness"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["sluttiness"]["max"]):
-                    self.charStats["sluttiness"]["current"] += num
-                else:
-                    self.charStats["sluttiness"]["current"] = self.charStats["sluttiness"]["max"]
-
-        def addAwareness(self, num = 1):
-            if ("awareness" in self.charStats):
-                current = self.charStats["awareness"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["awareness"]["max"]):
-                    self.charStats["awareness"]["current"] += num
-                else:
-                    self.charStats["awareness"]["current"] = self.charStats["awareness"]["max"]
-
-        def addStrength(self, num = 1):
-            if ("strength" in self.charStats):
-                current = self.charStats["strength"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["strength"]["max"]):
-                    self.charStats["strength"]["current"] += num
-                else:
-                    self.charStats["strength"]["current"] = self.charStats["strength"]["max"]
-
-        def addFitness(self, num = 1):
-            if ("fitness" in self.charStats):
-                current = self.charStats["fitness"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["fitness"]["max"]):
-                    self.charStats["fitness"]["current"] += num
-                else:
-                    self.charStats["fitness"]["current"] = self.charStats["fitness"]["max"]
-
-        def addCharisma(self, num = 1):
-            if ("charisma" in self.charStats):
-                current = self.charStats["charisma"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["fitness"]["max"]):
-                    self.charStats["charisma"]["current"] += num
-                else:
-                    self.charStats["charisma"]["current"] = self.charStats["charisma"]["max"]
-
-        def addCharm(self, num = 1):
-            if ("charm" in self.charStats):
-                current = self.charStats["charm"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["fitness"]["max"]):
-                    self.charStats["charm"]["current"] += num
-                else:
-                    self.charStats["charm"]["current"] = self.charStats["charm"]["max"]
-
-        def addKnowledge(self, num = 1):
-            if ("knowledge" in self.charStats):
-                current = self.charStats["knowledge"]["current"]
-                num = int(num)
-
-                if ((current + num) <= self.charStats["fitness"]["max"]):
-                    self.charStats["knowledge"]["current"] += num
-                else:
-                    self.charStats["knowledge"]["current"] = self.charStats["knowledge"]["max"]
-
-        def subRelationship(self, num = 1):
-            if ("relationship" in self.charStats):
-                current = self.charStats["relationship"]["current"]
+        def subStats(self, stats, num = 1):
+            if (stats in self.charStats):
+                current = self.charStats[stats]["current"]
                 num = int(num)
 
                 if ((current - num) >= 0):
-                    self.charStats["relationship"]["current"] -= num
+                    self.charStats[stats]["current"] -= num
                 else:
-                    self.charStats["relationship"]["current"] = 0
+                    self.charStats[stats]["current"] = 0
 
-        def subCorruption(self, num = 1):
-            if ("corruption" in self.charStats):
-                current = self.charStats["corruption"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["corruption"]["current"] -= num
-                else:
-                    self.charStats["corruption"]["current"] = 0
-
-        def subSluttiness(self, num = 1):
-            if ("sluttiness" in self.charStats):
-                current = self.charStats["sluttiness"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["sluttiness"]["current"] -= num
-                else:
-                    self.charStats["sluttiness"]["current"] = 0
-
-        def subAwareness(self, num = 1):
-            if ("awareness" in self.charStats):
-                current = self.charStats["awareness"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["awareness"]["current"] -= num
-                else:
-                    self.charStats["awareness"]["current"] = 0
-
-        def subStrength(self, num = 1):
-            if ("strength" in self.charStats):
-                current = self.charStats["strength"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["strength"]["current"] -= num
-                else:
-                    self.charStats["strength"]["current"] = 0
-
-        def subFitness(self, num = 1):
-            if ("fitness" in self.charStats):
-                current = self.charStats["fitness"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["fitness"]["current"] -= num
-                else:
-                    self.charStats["fitness"]["current"] = 0
-
-        def subCharisma(self, num = 1):
-            if ("charisma" in self.charStats):
-                current = self.charStats["charisma"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["charisma"]["current"] -= num
-                else:
-                    self.charStats["charisma"]["current"] = 0
-
-        def subCharm(self, num = 1):
-            if ("charm" in self.charStats):
-                current = self.charStats["charm"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["charm"]["current"] -= num
-                else:
-                    self.charStats["charm"]["current"] = 0
-
-        def subKnowledge(self, num = 1):
-            if ("knowledge" in self.charStats):
-                current = self.charStats["knowledge"]["current"]
-                num = int(num)
-
-                if ((current - num) >= 0):
-                    self.charStats["knowledge"]["current"] -= num
-                else:
-                    self.charStats["knowledge"]["current"] = 0
-
-        def setStats(self, stats):
+        def setAllStats(self, stats):
             for stat in stats:
                 if (self.checkStatsList(stat)):
                     self.charStats[stat] = {

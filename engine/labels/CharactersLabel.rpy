@@ -6,19 +6,18 @@ label charactersLabel:
 
     # Here is your playground ↓
 
-    # $ mountCharacter.setStatusTitle("relationship", "???")
-    # $ mountCharacter.setStatusTitle("corruption", "???")
-    # $ mountCharacter.setStatusTitle("sluttiness", "???")
-    # $ mountCharacter.setStatusTitle("awareness", "???")
-    # $ mountCharacter.setStatusTitle("strength", "???")
-    # $ mountCharacter.setStatusTitle("fitness", "!!!")
-    # $ mountCharacter.setStatusTitle("charisma", "123")
-    # $ mountCharacter.setStatusTitle("charm", "°°°°")
-    # $ mountCharacter.setStatusTitle("knowledge", "???")
-
-    # $ mountCharacter.setStatusTitle("respect", "???") # not yet =)
-    # $ mountCharacter.setStatusTitle("libido", "???")  # not yet =)
-    # $ mountCharacter.setStatusTitle("submission", "???")  # not yet =)
+    # $ mountCharacter.setStatusTitle("relationship", "Love")
+    # $ mountCharacter.setStatusTitle("corruption", "Crime")
+    # $ mountCharacter.setStatusTitle("sluttiness", "Perverted")
+    # $ mountCharacter.setStatusTitle("awareness", "Perception")
+    # $ mountCharacter.setStatusTitle("strength", "Power")
+    # $ mountCharacter.setStatusTitle("fitness", "Vigor")
+    # $ mountCharacter.setStatusTitle("charisma", "Personality")
+    # $ mountCharacter.setStatusTitle("charm", "Appeal")
+    # $ mountCharacter.setStatusTitle("knowledge", "Mastery")
+    # $ mountCharacter.setStatusTitle("respect", "Approval")
+    # $ mountCharacter.setStatusTitle("libido", "Horniness")
+    # $ mountCharacter.setStatusTitle("submission", "Consent")
 
     # Example of how to assemble a character
     $ mountCharacter.addChar(
@@ -51,9 +50,9 @@ label charactersLabel:
         True # Character is active (default is True)
     )
 
-    $ mountCharacter.getCharByName("Emma").setRelationship(10)  # Setting a specific value
-    $ mountCharacter.getCharByName("Emma").addRelationship(30)  # Increasing the character's relationship by 30
-    $ mountCharacter.getCharByName("Emma").subRelationship(5)   # Decreasing the character's relationship by 5
+    $ mountCharacter.getCharByName("Emma").setStats("relationship", 10)  # Setting a specific value
+    $ mountCharacter.getCharByName("Emma").addStats("relationship", 30)  # Increasing the character's relationship by 30
+    $ mountCharacter.getCharByName("Emma").subStats("relationship", 5)   # Decreasing the character's relationship by 5
 
     $ mountCharacter.addChar(
         "James",
@@ -62,19 +61,19 @@ label charactersLabel:
         defaultFolder + "images/chars/james.png",
         {
             "strength": {
-                "current": 50,
+                "current": 0,
                 "max": 120
             },
             "charm": {
-                "current": 5,
+                "current": 25,
                 "max": 50
             }
         }
     )
 
-    $ mountCharacter.getCharByName("James").setStrength(10)  # Setting a specific value
-    $ mountCharacter.getCharByName("James").addStrength(30)  # Increasing the character's strength by 15
-    $ mountCharacter.getCharByName("James").subStrength(5)   # Decreasing the character's strength by 5
+    $ mountCharacter.getCharByName("James").setStats("strength", 50)  # Setting a specific value
+    $ mountCharacter.getCharByName("James").addStats("strength", 30)  # Increasing the character's strength by 15
+    $ mountCharacter.getCharByName("James").subStats("strength", 5)   # Decreasing the character's strength by 5
 
     $ mountCharacter.addChar(
         "Isabella",

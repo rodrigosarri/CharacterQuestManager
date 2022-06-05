@@ -26,10 +26,10 @@ style tabButton1 is button:
     xpos 175
     ypos 0
     xysize (361, 133)
-    background "[defaultFolder]images/tabs/tab_button1.png"
-    hover_background "[defaultFolder]images/tabs/tab_button1_hover.png"
-    selected_idle_background "[defaultFolder]images/tabs/tab_button1_hover.png"
-    selected_hover_background "[defaultFolder]images/tabs/tab_button1_hover.png"
+    background "[defaultFolder]images/bg/[configPanel.getColor]/tab1_idle.png"
+    hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab1_hover.png"
+    selected_idle_background "[defaultFolder]images/bg/[configPanel.getColor]/tab1_hover.png"
+    selected_hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab1_hover.png"
 
 style tabButton1_text is text:
     ypos 17
@@ -41,10 +41,10 @@ style tabButton2 is button:
     xpos 145
     ypos 0
     xysize (373, 104)
-    background "[defaultFolder]images/tabs/tab_button2.png"
-    hover_background "[defaultFolder]images/tabs/tab_button2_hover.png"
-    selected_idle_background "[defaultFolder]images/tabs/tab_button2_hover.png"
-    selected_hover_background "[defaultFolder]images/tabs/tab_button2_hover.png"
+    background "[defaultFolder]images/bg/[configPanel.getColor]/tab2_idle.png"
+    hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab2_hover.png"
+    selected_idle_background "[defaultFolder]images/bg/[configPanel.getColor]/tab2_hover.png"
+    selected_hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab2_hover.png"
 
 style tabButton2_text is text:
     ypos 17
@@ -56,10 +56,10 @@ style tabButton3 is button:
     xpos 130
     ypos 0
     xysize (373, 104)
-    background "[defaultFolder]images/tabs/tab_button3.png"
-    hover_background "[defaultFolder]images/tabs/tab_button3_hover.png"
-    selected_idle_background "[defaultFolder]images/tabs/tab_button3_hover.png"
-    selected_hover_background "[defaultFolder]images/tabs/tab_button3_hover.png"
+    background "[defaultFolder]images/bg/[configPanel.getColor]/tab3_idle.png"
+    hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab3_hover.png"
+    selected_idle_background "[defaultFolder]images/bg/[configPanel.getColor]/tab3_hover.png"
+    selected_hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab3_hover.png"
 
 style tabButton3_text is text:
     ypos 17
@@ -71,10 +71,10 @@ style tabButton4 is button:
     xpos 115
     ypos 0
     xysize (353, 133)
-    background "[defaultFolder]images/tabs/tab_button4.png"
-    hover_background "[defaultFolder]images/tabs/tab_button4_hover.png"
-    selected_idle_background "[defaultFolder]images/tabs/tab_button4_hover.png"
-    selected_hover_background "[defaultFolder]images/tabs/tab_button4_hover.png"
+    background "[defaultFolder]images/bg/[configPanel.getColor]/tab4_idle.png"
+    hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab4_hover.png"
+    selected_idle_background "[defaultFolder]images/bg/[configPanel.getColor]/tab4_hover.png"
+    selected_hover_background "[defaultFolder]images/bg/[configPanel.getColor]/tab4_hover.png"
 
 style tabButton4_text is text:
     ypos 17
