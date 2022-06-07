@@ -1,6 +1,4 @@
 init python:
-    import unicodedata
-
     class MountQuestObject(object):
 
         def __init__(self, questTitle, questDesc, questStatus, questHint, questProgress, questPlace):
@@ -41,6 +39,16 @@ init python:
                 self.questProgress["current"] -= progress
             else:
                 self.questProgress["current"] = 0
+
+        def setProgress(self, progress = {}):
+            self.questProgress["current"] = 0
+            self.questProgress["max"] = 100
+
+            if ("current" in progress):
+                self.questProgress["current"] = progress["current"]
+
+            if ("max" in progress):
+                self.questProgress["max"] = progress["max"]
 
         @property
         def getTitle(self):

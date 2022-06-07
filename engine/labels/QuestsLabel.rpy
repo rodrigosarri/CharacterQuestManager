@@ -33,11 +33,14 @@ label questsLabel:
         "inProgress", # Quest status
         "Tip to help complete this quest.",  # Hint or warning for this quest
         {
-            "current": 48,
-            "max": 120
+            "current": 0, # Initial quest progress
+            "max": 120     # Total points for completing progress
         },
         "A Place with No Name" # Place where the mission is taking place
     )
+
+    $ mountQuest.getQuestObjectByChar("Emma")[0].addProgress(72) # Increasing the character's progress by 72 in the first quest [0]
+    $ mountQuest.getQuestObjectByChar("Emma")[0].subProgress(24) # Decreasing the character's progress by 24 in the first quest [0]
 
     $ mountQuest.addQuest(
         mountCharacter.getCharByName("Emma"),
@@ -46,10 +49,12 @@ label questsLabel:
         "done",
         "",
         {
-            "current": 5,
+            "current": 4,
             "max": 5
         },
     )
+
+    $ mountQuest.getQuestObjectByChar("Emma")[1].addProgress() # Increasing the character's progress by 1 in the second quest [1]
 
     $ mountQuest.addQuest(
         mountCharacter.getCharByName("Emma"),
@@ -60,6 +65,11 @@ label questsLabel:
         {},
         "At Work"
     )
+
+    $ mountQuest.getQuestObjectByChar("Emma")[2].setProgress({ # Adding progress to a quest that started without in the third quest [2]
+        "current": 1, # If the current value is not informed, the current will be zero
+        "max": 10     # If the maximum value is not informed, the maximum value is 100
+    })
 
     $ mountQuest.addQuest(
         mountCharacter.getCharByName("Emma"),
