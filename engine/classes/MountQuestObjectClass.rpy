@@ -71,5 +71,22 @@ init python:
             return self.questProgress["max"]
 
         @property
+        def getProgressBar(self):
+            current = self.getCurrentProgress
+            max = self.getMaxProgress
+
+            part = 0
+
+            if (current >= max):
+                part = 5
+            else:
+                for x in reversed(range(1, 5)):
+                    if (current >= x * (max / 5)):
+                        part = x
+                        break
+
+            return defaultFolder + "images/progress/" + str(part) + ".png"
+
+        @property
         def getPlace(self):
             return self.questPlace

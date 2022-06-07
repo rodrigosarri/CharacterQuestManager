@@ -1,15 +1,16 @@
 screen filterInProgressQuests(char = Null):
-    hbox:
-        xpos 370
-        ypos 305
+    frame:
+        xysize(1344, 680)
+        xpos 380
+        ypos 310
+        style "defaultFrame"
 
-        area(0, 0, 1342, 600)
+        area(0, 0, 1344, 680)
         viewport id "questList":
             draggable True
             mousewheel True
 
             hbox:
-                spacing 24
                 box_wrap True
 
                 if (mountQuest.getFilterInProgressQuests(char.getCode)):
@@ -17,49 +18,63 @@ screen filterInProgressQuests(char = Null):
                         frame style "questFrame":
                             add "bgQuest"
 
-                            hbox:
+                            frame:
+                                xysize(145, 145)
+                                xpos 0
+                                ypos 5
+                                style "defaultFrame"
+
+                                add Transform(mountQuest.getQuestIcon(quests.getStatus), align = (0.5, 0.5))
+                                text mountQuest.getQuestTitle(quests.getStatus) xalign 0.5 yalign 1.0 style mountQuest.getQuestStyle(quests.getStatus)
+
+                            frame:
+                                xysize(1145, 115)
+                                xpos 155
+                                ypos 10
+                                style "defaultFrame"
+
                                 vbox:
-                                    xoffset 8
-                                    yoffset 8
-                                    xminimum 1192
+                                    spacing 8
+                                    text quests.getTitle  style "questTitle"
+                                    text quests.getDesc style "questDesc"
 
-                                    text "[quests.getTitle]"  style "questTitle"
-                                    text "[quests.getDesc]" style "questDesc"
+                            frame:
+                                xysize(610, 30)
+                                xpos 155
+                                yanchor 1.0
+                                ypos 1.0
+                                style "defaultFrame"
 
+                                if (quests.getHint):
+                                    text quests.getHint style "questHint"
+
+                            frame:
+                                xysize(265, 30)
+                                xpos 805
+                                yanchor 1.0
+                                ypos 1.0
+                                style "defaultFrame"
+
+                                if (quests.getProgress):
                                     hbox:
-                                        spacing 8
+                                        text "Progress: " style "questProgress"
+                                        add quests.getProgressBar
 
-                                        if (quests.getHint):
-                                            text "[quests.getHint]" style "questHint"
+                            frame:
+                                xysize(265, 30)
+                                yanchor 1.0
+                                ypos 1.0
+                                xanchor 1.0
+                                xpos 1.0
+                                style "defaultFrame"
 
-                                        if (quests.getProgress):
-                                            text "Progress:" style "questProgress"
-                                            text "[quests.getCurrentProgress]/[quests.getMaxProgress]" style "questProgress"
+                                if (quests.getPlace):
+                                    hbox:
+                                        text "Place: " style "questPlace"
+                                        text "{u}[quests.getPlace]{/u}" style "questPlace"
 
-                                        if (quests.getPlace):
-                                            text "Place:" style "questProgress"
-                                            text "[quests.getPlace]" style "questProgress"
-
-                                vbox:
-                                    ypos 0.5
-
-                                    if (quests.getStatus == "done"):
-                                        add "doneIcon" xpos 0.35
-                                        text "Done" style "titleIconDone"
-                                    elif (quests.getStatus == "inProgress"):
-                                        add "inprogressIcon" xpos 0.2
-                                        text "In progress" style "titleIconInprogress"
-                                    elif (quests.getStatus == "underDev"):
-                                        add "underdevIcon" xpos 0.2
-                                        text "Under dev." style "titleIconUnderDev"
-                                    elif (quests.getStatus == "new"):
-                                        add "newIcon" xpos 0.35
-                                        text "New" style "titleIconNew"
-                                    elif (quests.getStatus == "close"):
-                                        add "closeIcon" xpos 0.35
-                                        text "Close" style "titleIconClose"
                 else:
-                    text "This character doesn't have any quests yet" style "questTitle"
-                    add "noQuests" ypos 0.5
+                    text "No quests with this status were found" style "noQuestTitle"
+                    add "noQuests" ypos 0.5 xpos 0 xanchor 1.0 yanchor 0.0
 
         #vbar value YScrollValue("questList")

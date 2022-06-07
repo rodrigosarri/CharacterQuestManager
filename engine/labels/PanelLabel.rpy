@@ -14,8 +14,6 @@ label panelLabel:
     # $ configPanel.setColor("science_blue")
     # $ configPanel.setColor("tenn")
 
-    # $ configPanel.setTabStyle("icon")
-
     $ cqmAction = [
         ToggleScreen("showChars"),
         Hide("allChars"),

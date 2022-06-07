@@ -142,14 +142,22 @@ init python:
         @property
         def getSpacingStatus(self):
             if (len(self.questStatus) == 5):
-                return 118
+                return 119
             elif (len(self.questStatus) == 4):
-                return 172
+                return 176
             elif (len(self.questStatus) == 3):
-                return 295
+                return 300
             else:
-                return 118
+                return 119
 
         def getQuestTitle(self, status):
             if (self.checkQuestStatus(status)):
                 return self.questsTitle[status]
+
+        def getQuestIcon(self, status):
+            if (self.checkQuestStatus(status)):
+                return defaultFolder + "images/icons/" + status + ".png"
+
+        def getQuestStyle(self, status):
+            if (self.checkQuestStatus(status)):
+                return "titleIcon" + status.capitalize()

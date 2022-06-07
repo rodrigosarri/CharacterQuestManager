@@ -1,8 +1,8 @@
 screen quest(char = Null):
-    vbox:
-        pos((0.19, 0.2))
-        xanchor 1
-        yanchor 0
+    frame:
+        xpos 372
+        ypos 230
+        style "defaultFrame"
 
         hbox:
             spacing mountQuest.getSpacingStatus
@@ -25,6 +25,5 @@ screen quest(char = Null):
                 if ("close" in mountQuest.getQuestStatus):
                     textbutton mountQuest.getQuestTitle("close") action [Show("filterCloseQuests", char = char), filterCloseActions] style "filterTitle"
             else:
-                vbox:
-                    text "This character doesn't have any quests yet" style "noQuestTitle"
-                    add "noQuests" ypos 0.5 xpos 0 xanchor 0.0
+                text "This character doesn't have any quests yet" style "noQuestTitle"
+                add "noQuests" ypos 0.5 xpos 0 xanchor 1.0 yanchor 0.0

@@ -13,11 +13,6 @@ label cqm:
     image noQuests       = "[defaultFolder]images/no_quests.png"
 
     # default icons
-    image newIcon        = "[defaultFolder]images/icons/new.png"
-    image doneIcon       = "[defaultFolder]images/icons/done.png"
-    image inprogressIcon = "[defaultFolder]images/icons/in_progress.png"
-    image underdevIcon   = "[defaultFolder]images/icons/under_dev.png"
-    image closeIcon      = "[defaultFolder]images/icons/close.png"
     image charIcon       = "[defaultFolder]images/icons/characters_icon.png"
     image questIcon      = "[defaultFolder]images/icons/quests_icon.png"
 

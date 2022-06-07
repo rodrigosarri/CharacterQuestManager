@@ -6,7 +6,6 @@ init python:
             currentColor  = "default",
             titleChacters = "Characters",
             titleQuest = "Quest Log",
-            tabStyle = "text",
         ):
             if (self.checkColorList(currentColor)):
                 self.currentColor = currentColor
@@ -15,8 +14,6 @@ init python:
 
             self.titleChacters = titleChacters
             self.titleQuest = titleQuest
-
-            self.tabStyle = tabStyle
 
         def checkColorList(self, color):
             colors = [
@@ -38,17 +35,6 @@ init python:
 
             return True
 
-        def checkTabList(self, style):
-            styles = [
-                "text",
-                "icon"
-            ]
-
-            if (style not in styles):
-                return False
-
-            return True
-
         def setColor(self, color):
             if (self.checkColorList(color)):
                 self.currentColor = color
@@ -58,12 +44,6 @@ init python:
 
         def setTitleQuest(self, title):
             self.titleQuest = title
-
-        def setTabStyle(self, style):
-            if (self.checkTabList(style)):
-                self.tabStyle = style
-            else:
-                self.tabStyle = "text"
 
         @property
         def getColor(self):
@@ -80,7 +60,3 @@ init python:
         @property
         def getTitleQuest(self):
             return self.titleQuest
-
-        @property
-        def getTabStyle(self):
-            return self.tabStyle

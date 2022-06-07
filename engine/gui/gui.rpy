@@ -195,64 +195,64 @@ style filterTitle_text is text:
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style questTitle is text:
-    size 35
-    color "#000000"
+    size 30
+    color "#3a230a"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
+
+style questDesc is text:
+    size 20
+    color "#7a4b17"
+    font defaultFolder + "/fonts/ariali.ttf"
+    line_leading 4
+    xmaximum 1145
+    justify True
 
 style noQuestTitle is text:
     size 35
     color "#000000"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
     xanchor 0.0
-
-style questDesc is text:
-    size 20
-    color "#71461b"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-    line_leading 4
-    xmaximum 1170
-    justify True
+    xpos 0.5
 
 style questHint is text:
     size 16
     color "#d40f0f"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-    justify True
-    yanchor -1.0
+    font defaultFolder + "/fonts/arialbd.ttf"
 
 style questProgress is text:
-    size 20
-    color "#333333"
-    font defaultFolder + "/fonts/ARLRDBD.ttf"
-    yanchor -0.7
+    size 16
+    color "#3a230a"
+    font defaultFolder + "/fonts/arialbd.ttf"
+
+style questPlace is text:
+    size 16
+    color "#3a230a"
+    font defaultFolder + "/fonts/arialbd.ttf"
 
 style titleIconNew is text:
     size 20
     color "#e0218a"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
-    xpos 0.42
 
 style titleIconDone is text:
     size 20
     color "#75d40f"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
-    xpos 0.42
 
 style titleIconInprogress is text:
     size 20
-    color "#ff9c00"
+    color "#ffb637"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
-style titleIconUnderDev is text:
+style titleIconUnderdev is text:
     size 20
     color "#d40f0f"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style titleIconClose is text:
     size 20
-    color "#b01919"
+    color "#838081"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
-    xpos 0.42
 
 style mainFrame is default:
     xysize(1580, 872)
@@ -290,12 +290,11 @@ style statsFrame is default:
     background None
 
 style questFrame is default:
-    xysize(1342, 183)
+    xysize(1344, 180)
     xalign .5
     yalign .5
     xpadding 0
     ypadding 0
-    xmargin 0
-    ymargin 0
+    bottom_margin 20
     modal False
     background None
