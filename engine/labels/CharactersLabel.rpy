@@ -6,18 +6,18 @@ label charactersLabel:
 
     # Here is your playground ↓
 
-    $ mountCharacter.setStatusTitle("relationship", "Love")
-    $ mountCharacter.setStatusTitle("corruption", "Crime")
-    $ mountCharacter.setStatusTitle("sluttiness", "Perverted")
-    $ mountCharacter.setStatusTitle("awareness", "Perception")
-    $ mountCharacter.setStatusTitle("strength", "Power")
-    $ mountCharacter.setStatusTitle("fitness", "Vigor")
-    $ mountCharacter.setStatusTitle("charisma", "Personality")
-    $ mountCharacter.setStatusTitle("charm", "Appeal")
-    $ mountCharacter.setStatusTitle("knowledge", "Mastery")
-    $ mountCharacter.setStatusTitle("respect", "Approval")
-    $ mountCharacter.setStatusTitle("libido", "Horniness")
-    $ mountCharacter.setStatusTitle("submission", "Consent")
+    # $ mountCharacter.setStatusTitle("relationship", "Love")
+    # $ mountCharacter.setStatusTitle("corruption", "Crime")
+    # $ mountCharacter.setStatusTitle("sluttiness", "Perverted")
+    # $ mountCharacter.setStatusTitle("awareness", "Perception")
+    # $ mountCharacter.setStatusTitle("strength", "Power")
+    # $ mountCharacter.setStatusTitle("fitness", "Vigor")
+    # $ mountCharacter.setStatusTitle("charisma", "Personality")
+    # $ mountCharacter.setStatusTitle("charm", "Appeal")
+    # $ mountCharacter.setStatusTitle("knowledge", "Mastery")
+    # $ mountCharacter.setStatusTitle("respect", "Approval")
+    # $ mountCharacter.setStatusTitle("libido", "Horniness")
+    # $ mountCharacter.setStatusTitle("submission", "Consent")
 
     # Example of how to assemble a character
     $ mountCharacter.addChar(
