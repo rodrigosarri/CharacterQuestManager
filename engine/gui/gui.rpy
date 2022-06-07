@@ -113,7 +113,7 @@ style statsTitle is text:
 style statsAwareness is text:
     size 25
     xalign 0.5
-    color "#fffb04"
+    color "#a3a000"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
 style statsCharisma is text:

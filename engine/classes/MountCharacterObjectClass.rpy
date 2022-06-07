@@ -15,44 +15,20 @@ init python:
 
             self.isShow = isShow
 
-            self.configStats = {
-                "relationship": {
-                    "style": "statsRelationship"
-                },
-                "corruption": {
-                    "style": "statsCorruption"
-                },
-                "sluttiness": {
-                    "style": "statsSluttiness"
-                },
-                "awareness": {
-                    "style": "statsAwareness"
-                },
-                "strength": {
-                    "style": "statsStrength"
-                },
-                "fitness": {
-                    "style": "statsFitness"
-                },
-                "charisma": {
-                    "style": "statsCharisma"
-                },
-                "charm": {
-                    "style": "statsCharm"
-                },
-                "knowledge": {
-                    "style": "statsKnowledge"
-                },
-                "respect": {
-                    "style": "statsRespect"
-                },
-                "libido": {
-                    "style": "statsLibido"
-                },
-                "submission": {
-                    "style": "statsSubmission"
-                },
-            }
+            self.configStats = [
+                "awareness",
+                "charisma",
+                "charm",
+                "corruption",
+                "fitness",
+                "knowledge",
+                "libido",
+                "relationship",
+                "respect",
+                "sluttiness",
+                "strength",
+                "submission"
+            ]
 
         def checkStatsList(self, stat):
             if (stat not in self.configStats):
@@ -175,13 +151,18 @@ init python:
         def getInfoByStats(self, stat):
             return str(self.charStats[stat]["current"]) + "/" + str(self.charStats[stat]["max"])
 
+        def getStatsStyle(self, stat):
+            return "stats" + stat.capitalize()
+
         @property
         def getAllStatsChar(self):
             statsChar = {}
 
             for stats in self.charStats:
-                if (stats in self.configStats):
-                    statsChar[stats] = self.configStats[stats]
+                if (self.checkStatsList(stats)):
+                    statsChar[stats] = {}
+
+                    statsChar[stats]["style"] = self.getStatsStyle(stats)
                     statsChar[stats]["icon"] = self.getIconByStats(stats)
                     statsChar[stats]["info"] = self.getInfoByStats(stats)
 

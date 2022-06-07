@@ -3,6 +3,11 @@ label panelLabel:
     # Character 'n' Quest Manager
 
     $ configPanel = Panel()
+
+    # Here is your playground ↓
+
+    # Change color of background
+
     # $ configPanel.setColor("anakiwa")
     # $ configPanel.setColor("caribbean_green")
     # $ configPanel.setColor("electric_violet")
@@ -13,6 +18,14 @@ label panelLabel:
     # $ configPanel.setColor("rio_grande")
     # $ configPanel.setColor("science_blue")
     # $ configPanel.setColor("tenn")
+
+    # Change title of tabs (Characters, Quest Log)
+
+    # $ configPanel.setTitleCharacters("Char")
+    # $ configPanel.setTitleQuest("Mission")
+
+    # Don't touch
+    # Character 'n' Quest Manager  ↓
 
     $ cqmAction = [
         ToggleScreen("showChars"),

@@ -6,18 +6,18 @@ label charactersLabel:
 
     # Here is your playground ↓
 
-    # $ mountCharacter.setStatusTitle("relationship", "Love")
-    # $ mountCharacter.setStatusTitle("corruption", "Crime")
-    # $ mountCharacter.setStatusTitle("sluttiness", "Perverted")
-    # $ mountCharacter.setStatusTitle("awareness", "Perception")
-    # $ mountCharacter.setStatusTitle("strength", "Power")
-    # $ mountCharacter.setStatusTitle("fitness", "Vigor")
-    # $ mountCharacter.setStatusTitle("charisma", "Personality")
-    # $ mountCharacter.setStatusTitle("charm", "Appeal")
-    # $ mountCharacter.setStatusTitle("knowledge", "Mastery")
-    # $ mountCharacter.setStatusTitle("respect", "Approval")
-    # $ mountCharacter.setStatusTitle("libido", "Horniness")
-    # $ mountCharacter.setStatusTitle("submission", "Consent")
+    $ mountCharacter.setStatusTitle("relationship", "Love")
+    $ mountCharacter.setStatusTitle("corruption", "Crime")
+    $ mountCharacter.setStatusTitle("sluttiness", "Perverted")
+    $ mountCharacter.setStatusTitle("awareness", "Perception")
+    $ mountCharacter.setStatusTitle("strength", "Power")
+    $ mountCharacter.setStatusTitle("fitness", "Vigor")
+    $ mountCharacter.setStatusTitle("charisma", "Personality")
+    $ mountCharacter.setStatusTitle("charm", "Appeal")
+    $ mountCharacter.setStatusTitle("knowledge", "Mastery")
+    $ mountCharacter.setStatusTitle("respect", "Approval")
+    $ mountCharacter.setStatusTitle("libido", "Horniness")
+    $ mountCharacter.setStatusTitle("submission", "Consent")
 
     # Example of how to assemble a character
     $ mountCharacter.addChar(
@@ -40,11 +40,39 @@ label charactersLabel:
             },
             "fitness": {
                 "current": 30,
-                "max": 80
+                "max": 90
             },
             "corruption": {
+                "current": 0,
+                "max": 100
+            },
+            "awareness": {
+                "current": 10,
+                "max": 50
+            },
+            "respect": {
+                "current": 20,
+                "max": 60
+            },
+            "libido": {
                 "current": 30,
+                "max": 60
+            },
+            "sluttiness": {
+                "current": 0,
+                "max": 70
+            },
+            "strength": {
+                "current": 10,
                 "max": 80
+            },
+            "charm": {
+                "current": 20,
+                "max": 90
+            },
+            "submission": {
+                "current": 30,
+                "max": 100
             },
         },
         True # Character is active (default is True)

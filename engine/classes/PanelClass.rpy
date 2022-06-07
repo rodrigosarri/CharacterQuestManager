@@ -12,7 +12,7 @@ init python:
             else:
                 self.currentColor = "default"
 
-            self.titleChacters = titleChacters
+            self.titleCharacters = titleChacters
             self.titleQuest = titleQuest
 
         def checkColorList(self, color):
@@ -39,8 +39,8 @@ init python:
             if (self.checkColorList(color)):
                 self.currentColor = color
 
-        def setTitleChacters(self, title):
-            self.titleChacters = title
+        def setTitleCharacters(self, title):
+            self.titleCharacters = title
 
         def setTitleQuest(self, title):
             self.titleQuest = title
@@ -54,8 +54,8 @@ init python:
             return defaultFolder + "images/bg/" + self.getColor + "/bg_idle.png"
 
         @property
-        def getTitleChacters(self):
-            return self.titleChacters
+        def getTitleCharacters(self):
+            return self.titleCharacters
 
         @property
         def getTitleQuest(self):
