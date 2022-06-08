@@ -18,9 +18,6 @@ init python:
         def setHint(self, questHint):
             self.questHint = questHint
 
-        def setProgress(self, questProgress):
-            self.questProgress = questProgress
-
         def setPlace(self, questPlace):
             self.questPlace = questPlace
 

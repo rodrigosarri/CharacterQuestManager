@@ -36,7 +36,7 @@ label questsLabel:
             "current": 0, # Initial quest progress
             "max": 120     # Total points for completing progress
         },
-        "A Place with No Name" # Place where the mission is taking place
+        "A Place with No Name" # Place where the quest is taking place
     )
 
     $ mountQuest.getQuestObjectByChar("Emma")[0].addProgress(72) # Increasing the character's progress by 72 in the first quest [0]
@@ -76,8 +76,9 @@ label questsLabel:
         "Quest you missed by choosing another path",
         "as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text",
         "close",
-        "These things happen =("
     )
+
+    $ mountQuest.getQuestObjectByChar("Emma")[3].setHint("These things happen =(")
 
     $ mountQuest.addQuest(
         mountCharacter.getCharByName("Emma"),

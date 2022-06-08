@@ -41,17 +41,17 @@ init python:
 
         def checkStats(self, stat):
             stats = [
-                "relationship",
-                "corruption",
-                "sluttiness",
                 "awareness",
-                "strength",
-                "fitness",
                 "charisma",
                 "charm",
+                "corruption",
+                "fitness",
                 "knowledge",
-                "respect",
                 "libido",
+                "relationship",
+                "respect",
+                "sluttiness",
+                "strength",
                 "submission"
             ]
 

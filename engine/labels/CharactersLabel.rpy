@@ -6,17 +6,17 @@ label charactersLabel:
 
     # Here is your playground ↓
 
-    # $ mountCharacter.setStatusTitle("relationship", "Love")
-    # $ mountCharacter.setStatusTitle("corruption", "Crime")
-    # $ mountCharacter.setStatusTitle("sluttiness", "Perverted")
     # $ mountCharacter.setStatusTitle("awareness", "Perception")
-    # $ mountCharacter.setStatusTitle("strength", "Power")
-    # $ mountCharacter.setStatusTitle("fitness", "Vigor")
     # $ mountCharacter.setStatusTitle("charisma", "Personality")
     # $ mountCharacter.setStatusTitle("charm", "Appeal")
+    # $ mountCharacter.setStatusTitle("corruption", "Crime")
+    # $ mountCharacter.setStatusTitle("fitness", "Vigor")
     # $ mountCharacter.setStatusTitle("knowledge", "Mastery")
-    # $ mountCharacter.setStatusTitle("respect", "Approval")
     # $ mountCharacter.setStatusTitle("libido", "Horniness")
+    # $ mountCharacter.setStatusTitle("relationship", "Love")
+    # $ mountCharacter.setStatusTitle("respect", "Approval")
+    # $ mountCharacter.setStatusTitle("sluttiness", "Perverted")
+    # $ mountCharacter.setStatusTitle("strength", "Power")
     # $ mountCharacter.setStatusTitle("submission", "Consent")
 
     # Example of how to assemble a character
@@ -120,5 +120,13 @@ label charactersLabel:
         "Jenny",
         "This character has neither a profile picture nor a description picture.",
     )
+
+    # Adding stats after character creation
+    $ mountCharacter.getCharByName("Jenny").setAllStats({
+        "fitness": {
+            "current": 30,
+            "max": 90
+        },
+    })
 
     return
