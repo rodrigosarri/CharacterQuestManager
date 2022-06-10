@@ -33,12 +33,7 @@ label panelLabel:
         Hide("allQuests"),
         Hide("char"),
         Hide("quest"),
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
+        Hide("filterQuests"),
     ]
 
     $ charTabButtonActions = [
@@ -46,12 +41,7 @@ label panelLabel:
         Hide("allQuests"),
         Hide("char"),
         Hide("quest"),
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
+        Hide("filterQuests"),
     ]
 
     $ questTabButtonActions = [
@@ -59,87 +49,19 @@ label panelLabel:
         Hide("allChars"),
         Hide("char"),
         Hide("quest"),
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
+        Hide("filterQuests"),
     ]
 
     $ charButtonActions = [
         Hide("allQuests"),
         Hide("quest"),
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
+        Hide("filterQuests"),
     ]
 
     $ questButtonActions = [
         Hide("allChars"),
         Hide("char"),
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
-    ]
-
-    $ filterAllActions = [
-        Hide("filterDoneQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
-        Hide("char"),
-    ]
-
-    $ filterDoneActions = [
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
-        Hide("char")
-    ]
-
-    $ filterInProgressActions = [
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
-        Hide("char")
-    ]
-
-    $ filterUnderDevActions = [
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterCloseQuests"),
-        Hide("filterNewQuests"),
-        Hide("char")
-    ]
-
-    $ filterNewActions = [
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterCloseQuests"),
-        Hide("char")
-    ]
-
-    $ filterCloseActions = [
-        Hide("filterDoneQuests"),
-        Hide("filterAllQuests"),
-        Hide("filterInProgressQuests"),
-        Hide("filterNewQuests"),
-        Hide("filterUnderDevQuests"),
-        Hide("char")
+        Hide("filterQuests"),
     ]
 
     return

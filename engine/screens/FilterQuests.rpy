@@ -1,4 +1,17 @@
-screen filterCloseQuests(char = Null):
+screen filterQuests(char, filter):
+    if (filter == "all"):
+        $ filtered = mountQuest.getQuestObjectByChar(char.getCode)
+    elif (filter == "close"):
+        $ filtered = mountQuest.getFilterCloseQuests(char.getCode)
+    elif (filter == "done"):
+        $ filtered = mountQuest.getFilterDoneQuests(char.getCode)
+    elif (filter == "inProgress"):
+        $ filtered = mountQuest.getFilterInProgressQuests(char.getCode)
+    elif (filter == "new"):
+        $ filtered = mountQuest.getFilterNewQuests(char.getCode)
+    else:
+        $ filtered = mountQuest.getFilterUnderDevQuests(char.getCode)
+
     frame:
         xysize(1344, 680)
         xpos 380
@@ -13,8 +26,8 @@ screen filterCloseQuests(char = Null):
             hbox:
                 box_wrap True
 
-                if (mountQuest.getFilterCloseQuests(char.getCode)):
-                    for quests in mountQuest.getFilterCloseQuests(char.getCode):
+                if (mountQuest.getQuestObjectByChar(char.getCode)):
+                    for quests in filtered:
                         frame style "questFrame":
                             add "bgQuest"
 

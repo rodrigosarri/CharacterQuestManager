@@ -2,11 +2,20 @@ init python:
     import unicodedata
 
     class Quests(object):
-        def __init__(self, allQuests = {}, charCode = ""):
-            self.allQuests = allQuests
+        def __init__(self):
+            self.allQuests = {}
             self.charCode = ""
-            self.questStatus = ["new", "done", "inProgress", "underDev", "close"]
+            self.questStatus = [
+                "all",
+                "new",
+                "done",
+                "inProgress",
+                "underDev",
+                "close"
+            ]
+
             self.questsTitle = {
+                "all": "All",
                 "new": "New",
                 "done": "Done",
                 "inProgress": "In Progress",
@@ -23,15 +32,19 @@ init python:
             return str(text)
 
         def checkQuestStatus(self, status):
-            currentQuestStatus = ["new", "done", "inProgress", "underDev", "close"]
+            currentStatus = [
+                "all",
+                "new",
+                "done",
+                "inProgress",
+                "underDev",
+                "close"
+            ]
 
-            if (status not in currentQuestStatus):
-                return False
-
-            return True
+            return status in currentStatus
 
         def setStatusQuest(self, questStatus):
-            self.questStatus = []
+            self.questStatus = ["all"]
 
             for status in questStatus:
                 if (self.checkQuestStatus(status)):
