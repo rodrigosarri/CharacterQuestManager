@@ -83,66 +83,18 @@ init python:
 
             return False
 
-        def getFilterDoneQuests(self, charCode):
+        def getFilterQuestsByStatus(self, charCode, status = "all"):
             charCode = self.stripAccents(charCode)
             filter = []
 
             if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "done"):
-                        filter.append(quest)
+                if (status == "all"):
+                    filter = self.allQuests[charCode]
+                else:
 
-                return filter
-
-            return False
-
-        def getFilterInProgressQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "inProgress"):
-                        filter.append(quest)
-
-                return filter
-
-            return False
-
-        def getFilterUnderDevQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "underDev"):
-                        filter.append(quest)
-
-                return filter
-
-            return False
-
-        def getFilterNewQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "new"):
-                        filter.append(quest)
-
-                return filter
-
-            return False
-
-        def getFilterCloseQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "close"):
-                        filter.append(quest)
+                    for quest in self.allQuests[charCode]:
+                        if (quest.getStatus == status):
+                            filter.append(quest)
 
                 return filter
 
