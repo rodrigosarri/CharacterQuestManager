@@ -64,7 +64,6 @@ init python:
                 else:
                     self.charStats[stats]["current"] = self.charStats[stats]["max"]
 
-
         def subStats(self, stats, num = 1):
             if (stats in self.charStats):
                 current = self.charStats[stats]["current"]
@@ -74,7 +73,6 @@ init python:
                     self.charStats[stats]["current"] -= num
                 else:
                     self.charStats[stats]["current"] = 0
-
 
         def setAllStats(self, stats):
             for stat in stats:
@@ -128,14 +126,6 @@ init python:
         @property
         def getTotalStats(self):
             return len(self.charStats)
-
-        @property
-        def getCurrentByStats(self, stats):
-            return self.charStats[stats]["current"]
-
-        @property
-        def getMaxByStats(self, stats):
-            return self.charStats[stats]["max"]
 
         def getTotalByStats(self, stat):
             current = float(self.charStats[stat]["current"])

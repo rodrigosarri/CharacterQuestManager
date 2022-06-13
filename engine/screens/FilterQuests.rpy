@@ -1,4 +1,4 @@
-screen filterCloseQuests(char = Null):
+screen filterQuests(char, filter):
     frame:
         xysize(1344, 680)
         xpos 380
@@ -13,8 +13,8 @@ screen filterCloseQuests(char = Null):
             hbox:
                 box_wrap True
 
-                if (mountQuest.getFilterCloseQuests(char.getCode)):
-                    for quests in mountQuest.getFilterCloseQuests(char.getCode):
+                if (mountQuest.getQuestObjectByChar(char.getCode)):
+                    for quests in mountQuest.getFilterQuestsByStatus(char.getCode, filter):
                         frame style "questFrame":
                             add "bgQuest"
 

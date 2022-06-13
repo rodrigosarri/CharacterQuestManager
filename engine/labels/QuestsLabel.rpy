@@ -8,16 +8,17 @@ label questsLabel:
 
     # Change status quests, default: new, done, inProgress, underDev, close
 
-    #$ mountQuest.setStatusQuest([
+    # $ mountQuest.setStatusQuest([
     #    "new",
     #    "done",
     #    "inProgress",
     #    "underDev",
-    #    "close"
-    #])
+    #    "close",
+    # ])
 
     # Change status quests title
 
+    # $ mountQuest.setQuestTitle("all", "Every")
     # $ mountQuest.setQuestTitle("new", "Start")
     # $ mountQuest.setQuestTitle("done", "Finish")
     # $ mountQuest.setQuestTitle("inProgress", "Progressing")

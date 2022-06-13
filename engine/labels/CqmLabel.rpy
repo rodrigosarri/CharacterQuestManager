@@ -12,10 +12,6 @@ label cqm:
     image noPicPhoto     = "[defaultFolder]images/no_pic_photo_idle.png"
     image noQuests       = "[defaultFolder]images/no_quests.png"
 
-    # default icons
-    image charIcon       = "[defaultFolder]images/icons/characters_icon.png"
-    image questIcon      = "[defaultFolder]images/icons/quests_icon.png"
-
     # Calling Panel label
     call panelLabel
 

@@ -277,7 +277,6 @@ style defaultFrame is default:
     modal False
     background None
 
-
 style statsFrame is default:
     xysize(963, 228)
     xalign 0

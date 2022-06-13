@@ -2,11 +2,20 @@ init python:
     import unicodedata
 
     class Quests(object):
-        def __init__(self, allQuests = {}, charCode = ""):
-            self.allQuests = allQuests
+        def __init__(self):
+            self.allQuests = {}
             self.charCode = ""
-            self.questStatus = ["new", "done", "inProgress", "underDev", "close"]
+            self.questStatus = [
+                "all",
+                "new",
+                "done",
+                "inProgress",
+                "underDev",
+                "close"
+            ]
+
             self.questsTitle = {
+                "all": "All",
                 "new": "New",
                 "done": "Done",
                 "inProgress": "In Progress",
@@ -23,15 +32,19 @@ init python:
             return str(text)
 
         def checkQuestStatus(self, status):
-            currentQuestStatus = ["new", "done", "inProgress", "underDev", "close"]
+            currentStatus = [
+                "all",
+                "new",
+                "done",
+                "inProgress",
+                "underDev",
+                "close"
+            ]
 
-            if (status not in currentQuestStatus):
-                return False
-
-            return True
+            return status in currentStatus
 
         def setStatusQuest(self, questStatus):
-            self.questStatus = []
+            self.questStatus = ["all"]
 
             for status in questStatus:
                 if (self.checkQuestStatus(status)):
@@ -70,66 +83,18 @@ init python:
 
             return False
 
-        def getFilterDoneQuests(self, charCode):
+        def getFilterQuestsByStatus(self, charCode, status = "all"):
             charCode = self.stripAccents(charCode)
             filter = []
 
             if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "done"):
-                        filter.append(quest)
+                if (status == "all"):
+                    filter = self.allQuests[charCode]
+                else:
 
-                return filter
-
-            return False
-
-        def getFilterInProgressQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "inProgress"):
-                        filter.append(quest)
-
-                return filter
-
-            return False
-
-        def getFilterUnderDevQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "underDev"):
-                        filter.append(quest)
-
-                return filter
-
-            return False
-
-        def getFilterNewQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "new"):
-                        filter.append(quest)
-
-                return filter
-
-            return False
-
-        def getFilterCloseQuests(self, charCode):
-            charCode = self.stripAccents(charCode)
-            filter = []
-
-            if (charCode in self.allQuests):
-                for quest in self.allQuests[charCode]:
-                    if (quest.getStatus == "close"):
-                        filter.append(quest)
+                    for quest in self.allQuests[charCode]:
+                        if (quest.getStatus == status):
+                            filter.append(quest)
 
                 return filter
 
