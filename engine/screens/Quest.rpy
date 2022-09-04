@@ -1,5 +1,5 @@
 screen quest(char = Null):
-    default selectedFilter = "all"
+    default selectedFilter = ""
 
     frame:
         xpos 372

@@ -1,4 +1,10 @@
 screen showChars():
+
+    if renpy.get_screen("showChars"):
+        $ renpy.block_rollback()
+    else:
+        $ renpy.can_rollback()
+
     frame style "mainFrame":
         add configPanel.getBg xpos 175 ypos 88
 
