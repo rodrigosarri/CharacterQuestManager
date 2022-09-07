@@ -45,6 +45,9 @@ init python:
         def setImage(self, charImage):
             self.charImage = charImage
 
+        def setProfilePic(self, charProfilePic):
+            self.charProfilePic = charProfilePic
+
         def setStats(self, stats, num = 0):
             if (stats in self.charStats):
                 num = int(num)
