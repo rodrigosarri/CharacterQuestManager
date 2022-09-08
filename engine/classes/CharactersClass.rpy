@@ -16,7 +16,8 @@ init python:
                 "knowledge": "Knowledge",
                 "respect": "Respect",
                 "libido": "Libido",
-                "submission": "Submission"
+                "submission": "Submission",
+                "fishing": "Fishing",
             }
 
         def addChar(self, charName, charDesc, charProfilePic = "", charImage = "", charStats = {}, isShow = True):
@@ -52,7 +53,8 @@ init python:
                 "respect",
                 "sluttiness",
                 "strength",
-                "submission"
+                "submission",
+                "fishing"
             ]
 
             if (stat not in stats):

@@ -27,7 +27,8 @@ init python:
                 "respect",
                 "sluttiness",
                 "strength",
-                "submission"
+                "submission",
+                "fishing",
             ]
 
         def checkStatsList(self, stat):

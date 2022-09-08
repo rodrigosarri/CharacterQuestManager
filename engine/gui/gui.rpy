@@ -182,6 +182,12 @@ style statsSubmission is text:
     color "#88303c"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
+style statsFishing is text:
+    size 25
+    xalign 0.5
+    color "#1d85b6"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
 style filterTitle is button:
     hover_background Transform("[defaultFolder]images/arrow_down.png", align = (0.5, 1.4))
     selected_idle_background Transform("[defaultFolder]images/arrow_down.png", align = (0.5, 1.4))

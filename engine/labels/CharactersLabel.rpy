@@ -74,6 +74,10 @@ label charactersLabel:
                 "current": 30,
                 "max": 100
             },
+            "fishing": {
+                "current": 50,
+                "max": 100
+            },
         },
         True # Character is active (default is True)
     )
