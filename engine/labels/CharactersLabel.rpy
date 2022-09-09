@@ -78,6 +78,10 @@ label charactersLabel:
                 "current": 50,
                 "max": 100
             },
+            "exhibitionist": {
+                "current": 40,
+                "max": 50
+            },
         },
         True # Character is active (default is True)
     )
