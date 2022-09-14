@@ -19,6 +19,7 @@ init python:
                 "submission": "Submission",
                 "fishing": "Fishing",
                 "exhibitionist": "Exhibitionist",
+                "sharing": "Sharing",
             }
 
         def addChar(self, charName, charDesc, charProfilePic = "", charImage = "", charStats = {}, isShow = True):
@@ -57,6 +58,7 @@ init python:
                 "submission",
                 "fishing",
                 "exhibitionist",
+                "sharing",
             ]
 
             if (stat not in stats):

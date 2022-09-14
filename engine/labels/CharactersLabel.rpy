@@ -82,6 +82,10 @@ label charactersLabel:
                 "current": 40,
                 "max": 50
             },
+            "sharing": {
+                "current": 45,
+                "max": 90
+            },
         },
         True # Character is active (default is True)
     )

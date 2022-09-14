@@ -194,6 +194,12 @@ style statsExhibitionist is text:
     color "#f56a8b"
     font defaultFolder + "/fonts/ARLRDBD.ttf"
 
+style statsSharing is text:
+    size 25
+    xalign 0.5
+    color "#560fb6"
+    font defaultFolder + "/fonts/ARLRDBD.ttf"
+
 style filterTitle is button:
     hover_background Transform("[defaultFolder]images/arrow_down.png", align = (0.5, 1.4))
     selected_idle_background Transform("[defaultFolder]images/arrow_down.png", align = (0.5, 1.4))

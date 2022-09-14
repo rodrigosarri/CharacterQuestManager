@@ -30,6 +30,7 @@ init python:
                 "submission",
                 "fishing",
                 "exhibitionist",
+                "sharing",
             ]
 
         def checkStatsList(self, stat):
