@@ -111,7 +111,14 @@ label charactersLabel:
         }
     )
 
-    $ mountCharacter.getCharByName("James").setHideName(True, "-----")
+    # Hide the character's name until you know him
+    $ mountCharacter.getCharByName("James").setHideName(True)
+
+    # You can use as a second parameter the character option you want to use to hide the name
+    # $ mountCharacter.getCharByName("James").setHideName(True, "-----")
+
+    # To redisplay the name use the same method but pass the value as false
+    # $ mountCharacter.getCharByName("James").setHideName(False)
 
     $ mountCharacter.getCharByName("James").setStats("strength", 50)  # Setting a specific value
     $ mountCharacter.getCharByName("James").addStats("strength", 30)  # Increasing the character's strength by 15
