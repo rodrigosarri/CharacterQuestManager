@@ -9,6 +9,8 @@ init python:
             self.charProfilePic = charProfilePic
             self.charImage = charImage
             self.charStats = charStats
+            self.hideName = False
+            self.hiddenNameText = "?????"
 
             if (not charStats):
                 self.setAllStats(charStats)
@@ -97,6 +99,10 @@ init python:
         def setActive(self):
             self.isShow = True
 
+        def setHideName(self, hide, text = "?????"):
+            self.hideName = hide
+            self.hiddenNameText = text
+
         def stripAccents(self, text):
             text = unicodedata.normalize("NFD", text)
             text = text.encode("ascii", "ignore")
@@ -163,3 +169,10 @@ init python:
                     statsChar[stats]["info"] = self.getInfoByStats(stats)
 
             return statsChar
+
+        @property
+        def getHideName(self):
+            return {
+                "hideName" : self.hideName,
+                "hiddenNameText" : self.hiddenNameText
+            }

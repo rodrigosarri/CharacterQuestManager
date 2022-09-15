@@ -22,8 +22,12 @@ screen char(type = Null):
                 xpos 50
                 spacing 30
 
-                text type.getName:
-                    style "charTitle"
+                if not type.getHideName['hideName']:
+                    text type.getName:
+                        style "charTitle"
+                else:
+                    text type.getHideName['hiddenNameText']:
+                        style "charTitle"
 
                 text type.getDesc:
                     style "charDesc"

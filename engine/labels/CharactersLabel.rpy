@@ -111,6 +111,8 @@ label charactersLabel:
         }
     )
 
+    $ mountCharacter.getCharByName("James").setHideName(True, "-----")
+
     $ mountCharacter.getCharByName("James").setStats("strength", 50)  # Setting a specific value
     $ mountCharacter.getCharByName("James").addStats("strength", 30)  # Increasing the character's strength by 15
     $ mountCharacter.getCharByName("James").subStats("strength", 5)   # Decreasing the character's strength by 5
