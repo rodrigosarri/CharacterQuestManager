@@ -11,6 +11,7 @@ init python:
             self.charStats = charStats
             self.hideName = False
             self.hiddenNameText = "?????"
+            self.statsImages = {}
 
             if (not charStats):
                 self.setAllStats(charStats)
@@ -103,6 +104,10 @@ init python:
             self.hideName = hide
             self.hiddenNameText = text
 
+        def setImageByStat(self, stat, image):
+            if (self.checkStatsChar(stat)):
+                self.statsImages[stat] = image
+
         def stripAccents(self, text):
             text = unicodedata.normalize("NFD", text)
             text = text.encode("ascii", "ignore")
@@ -176,3 +181,11 @@ init python:
                 "hideName" : self.hideName,
                 "hiddenNameText" : self.hiddenNameText
             }
+
+        # @property
+        def getImageByStat(self, stat):
+            if (self.checkStatsChar(stat)):
+                if (stat in self.statsImages):
+                    return self.statsImages[stat]
+
+            return self.getImage

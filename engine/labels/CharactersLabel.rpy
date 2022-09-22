@@ -90,6 +90,19 @@ label charactersLabel:
         True # Character is active (default is True)
     )
 
+    # You can add different images for each character's stats.
+
+
+    # To add it, you must use the setImageByStat method, sending as a parameter which stat you want to change the image and which is the image linked to that stat.
+
+    # Two remarks:
+    # 1 - You need to put the full path to the image.
+    # 2 - If you don't upload an image to the stat, the image displayed will be the character's original image
+
+    # Example of how to add an image for each stat
+    $ mountCharacter.getCharByName("Emma").setImageByStat("relationship", defaultFolder + "images/chars/james.png")
+    $ mountCharacter.getCharByName("Emma").setImageByStat("charisma", defaultFolder + "images/chars/isabella.png")
+
     $ mountCharacter.getCharByName("Emma").setStats("relationship", 10)  # Setting a specific value
     $ mountCharacter.getCharByName("Emma").addStats("relationship", 30)  # Increasing the character's relationship by 30
     $ mountCharacter.getCharByName("Emma").subStats("relationship", 5)   # Decreasing the character's relationship by 5

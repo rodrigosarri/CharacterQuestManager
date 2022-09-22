@@ -1,12 +1,15 @@
 screen char(type = Null):
+
+    default charImage = type.getImage
+
     if (type != Null):
         frame:
             xysize(250, 802)
             pos(365, 190)
             style "defaultFrame"
 
-            if (type.getImage):
-                add Transform(type.getImage, align = (0.0, 0.5)):
+            if (charImage):
+                add Transform(charImage, align = (0.0, 0.5)):
                     xpos 33
             else:
                 add Transform("noPhoto", align = (0.0, 0.5)):
@@ -54,8 +57,13 @@ screen char(type = Null):
                                             text mountCharacter.getStatusTitle(stats):
                                                 style "statsTitle"
 
-                                            add type.getAllStatsChar[stats]["icon"]:
+                                            imagebutton idle Transform(type.getAllStatsChar[stats]["icon"], align = (0.5, 0.5)):
+                                            # add type.getAllStatsChar[stats]["icon"]:
                                                 xalign .5
+                                                action Return(1)
+                                                hovered [SetScreenVariable("charImage", type.getImageByStat(stats))]
+                                                unhovered [SetScreenVariable("charImage", type.getImage)]
+                                                # SetVariable / SetScreenVariable
 
                                             text type.getAllStatsChar[stats]["info"]:
                                                 style type.getAllStatsChar[stats]["style"]
