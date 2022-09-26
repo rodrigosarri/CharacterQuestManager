@@ -60,7 +60,7 @@ screen char(type = Null):
                                             imagebutton idle Transform(type.getAllStatsChar[stats]["icon"], align = (0.5, 0.5)):
                                             # add type.getAllStatsChar[stats]["icon"]:
                                                 xalign .5
-                                                action Return(1)
+                                                action NullAction()
                                                 hovered [SetScreenVariable("charImage", type.getImageByStat(stats))]
                                                 unhovered [SetScreenVariable("charImage", type.getImage)]
                                                 # SetVariable / SetScreenVariable
