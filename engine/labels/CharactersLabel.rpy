@@ -107,8 +107,6 @@ label charactersLabel:
     $ mountCharacter.getCharByName("Emma").addStats("relationship", 30)  # Increasing the character's relationship by 30
     $ mountCharacter.getCharByName("Emma").subStats("relationship", 5)   # Decreasing the character's relationship by 5
 
-    $ mountCharacter.getCharByName("Emma").setHideStat("strength", True, "-----")
-
     $ mountCharacter.addChar(
         "James",
         "Another character description, now of the fictional character James. See that James' status is different from Emma's status.",
@@ -134,6 +132,15 @@ label charactersLabel:
 
     # To redisplay the name use the same method but pass the value as false
     # $ mountCharacter.getCharByName("James").setHideName(False)
+
+    # Hide the status of one of the character's items
+    $ mountCharacter.getCharByName("Emma").setHideStat("strength", True)
+
+    # You can use as a third parameter the character option you want to use to hide the stat
+    # $ mountCharacter.getCharByName("Emma").setHideStat("strength", True, "-----")
+
+    # To redisplay the stat name use the same method but pass the value as false
+    # $ mountCharacter.getCharByName("Emma").setHideStat("strength", False)
 
     $ mountCharacter.getCharByName("James").setStats("strength", 50)  # Setting a specific value
     $ mountCharacter.getCharByName("James").addStats("strength", 30)  # Increasing the character's strength by 30
