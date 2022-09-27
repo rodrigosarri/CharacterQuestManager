@@ -54,7 +54,7 @@ screen char(type = Null):
                                         vbox:
                                             spacing 8
 
-                                            text mountCharacter.getStatusTitle(stats):
+                                            text type.getHideStat(stats, mountCharacter.getStatusTitle(stats)):
                                                 style "statsTitle"
 
                                             imagebutton idle Transform(type.getAllStatsChar[stats]["icon"], align = (0.5, 0.5)):
