@@ -1,4 +1,6 @@
 screen allQuests():
+    modal True
+
     frame:
         xysize(177, 616)
         xpos 180

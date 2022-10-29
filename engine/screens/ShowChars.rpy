@@ -1,4 +1,5 @@
 screen showChars():
+    modal True
 
     if renpy.get_screen("showChars"):
         $ renpy.block_rollback()

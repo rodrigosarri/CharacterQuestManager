@@ -1,4 +1,6 @@
 screen allChars():
+    modal True
+
     frame:
         xysize(177, 616)
         xpos 180
