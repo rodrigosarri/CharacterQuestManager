@@ -1,5 +1,5 @@
 screen quest(char = Null):
-    default selectedFilter = ""
+    default selectedFilter = "all"
 
     frame:
         xpos 372
@@ -12,7 +12,10 @@ screen quest(char = Null):
             if (mountQuest.getQuestObjectByChar(char.getCode)):
                 for quests in mountQuest.getQuestStatus:
                     textbutton mountQuest.getQuestTitle(quests):
-                        action [Show("filterQuests", char = char, filter = quests), SetScreenVariable("selectedFilter", quests)]
+                        action [
+                            Show("filterQuests", char = char, filter = quests),
+                            SetScreenVariable("selectedFilter", quests)
+                        ]
                         selected selectedFilter == quests
                         style "filterTitle"
 

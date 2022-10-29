@@ -49,6 +49,9 @@ init python:
 
             return True
 
+        def setDesc(self, charDesc):
+            self.charDesc = charDesc
+
         def setImage(self, charImage):
             self.charImage = charImage
 

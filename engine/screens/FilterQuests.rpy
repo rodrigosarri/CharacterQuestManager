@@ -13,7 +13,7 @@ screen filterQuests(char, filter):
             hbox:
                 box_wrap True
 
-                if (mountQuest.getQuestObjectByChar(char.getCode)):
+                if (mountQuest.getFilterQuestsByStatus(char.getCode, filter)):
                     for quests in mountQuest.getFilterQuestsByStatus(char.getCode, filter):
                         frame style "questFrame":
                             add "bgQuest"

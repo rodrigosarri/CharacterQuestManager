@@ -16,8 +16,8 @@ screen allQuests():
                     if (charButton.getProfilePic):
                         imagebutton idle Transform(charButton.getProfilePic, align = (0.5, 0.5)):
                             style "charButton"
-                            action [Show("quest", char = charButton), questButtonActions]
+                            action [Show("quest", char = charButton), ToggleScreen("filterQuests", char = charButton, filter = "all"), questButtonActions]
                     else:
                         imagebutton idle Transform("noPicPhoto", align = (0.5, 0.5)):
                             style "charButton"
-                            action [Show("quest", char = charButton), questButtonActions]
+                            action [Show("quest", char = charButton), ToggleScreen("filterQuests", char = charButton, filter = "all"), questButtonActions]
