@@ -55,6 +55,8 @@ label questsLabel:
         },
     )
 
+    $ mountQuest.getQuestObjectByChar("Emma")[1].setStatus("close")
+
     $ mountQuest.getQuestObjectByChar("Emma")[1].addProgress() # Increasing the character's progress by 1 in the second quest [1]
 
     $ mountQuest.addQuest(

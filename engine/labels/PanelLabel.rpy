@@ -61,7 +61,6 @@ label panelLabel:
     $ questButtonActions = [
         Hide("allChars"),
         Hide("char"),
-        Hide("filterQuests"),
     ]
 
     return

@@ -15,6 +15,9 @@ init python:
         def setDesc(self, questDesc):
             self.questDesc = questDesc
 
+        def setStatus(self, questStatus):
+            self.questStatus = questStatus
+
         def setHint(self, questHint):
             self.questHint = questHint
 

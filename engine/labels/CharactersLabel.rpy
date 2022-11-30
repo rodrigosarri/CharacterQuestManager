@@ -74,9 +74,34 @@ label charactersLabel:
                 "current": 30,
                 "max": 100
             },
+            "fishing": {
+                "current": 50,
+                "max": 100
+            },
+            "exhibitionist": {
+                "current": 40,
+                "max": 50
+            },
+            "sharing": {
+                "current": 45,
+                "max": 90
+            },
         },
         True # Character is active (default is True)
     )
+
+    # You can add different images for each character's stats.
+
+
+    # To add it, you must use the setImageByStat method, sending as a parameter which stat you want to change the image and which is the image linked to that stat.
+
+    # Two remarks:
+    # 1 - You need to put the full path to the image.
+    # 2 - If you don't upload an image to the stat, the image displayed will be the character's original image
+
+    # Example of how to add an image for each stat
+    $ mountCharacter.getCharByName("Emma").setImageByStat("relationship", defaultFolder + "images/chars/james.png")
+    $ mountCharacter.getCharByName("Emma").setImageByStat("charisma", defaultFolder + "images/chars/isabella.png")
 
     $ mountCharacter.getCharByName("Emma").setStats("relationship", 10)  # Setting a specific value
     $ mountCharacter.getCharByName("Emma").addStats("relationship", 30)  # Increasing the character's relationship by 30
@@ -99,8 +124,26 @@ label charactersLabel:
         }
     )
 
+    # Hide the character's name until you know him
+    $ mountCharacter.getCharByName("James").setHideName(True)
+
+    # You can use as a second parameter the character option you want to use to hide the name
+    # $ mountCharacter.getCharByName("James").setHideName(True, "-----")
+
+    # To redisplay the name use the same method but pass the value as false
+    # $ mountCharacter.getCharByName("James").setHideName(False)
+
+    # Hide the status of one of the character's items
+    $ mountCharacter.getCharByName("Emma").setHideStat("strength", True)
+
+    # You can use as a third parameter the character option you want to use to hide the stat
+    # $ mountCharacter.getCharByName("Emma").setHideStat("strength", True, "-----")
+
+    # To redisplay the stat name use the same method but pass the value as false
+    # $ mountCharacter.getCharByName("Emma").setHideStat("strength", False)
+
     $ mountCharacter.getCharByName("James").setStats("strength", 50)  # Setting a specific value
-    $ mountCharacter.getCharByName("James").addStats("strength", 30)  # Increasing the character's strength by 15
+    $ mountCharacter.getCharByName("James").addStats("strength", 30)  # Increasing the character's strength by 30
     $ mountCharacter.getCharByName("James").subStats("strength", 5)   # Decreasing the character's strength by 5
 
     $ mountCharacter.addChar(

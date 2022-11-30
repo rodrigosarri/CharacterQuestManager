@@ -9,6 +9,10 @@ init python:
             self.charProfilePic = charProfilePic
             self.charImage = charImage
             self.charStats = charStats
+            self.hideName = False
+            self.hiddenNameText = "?????"
+            self.statsImages = {}
+            self.statsHidden = {}
 
             if (not charStats):
                 self.setAllStats(charStats)
@@ -27,7 +31,10 @@ init python:
                 "respect",
                 "sluttiness",
                 "strength",
-                "submission"
+                "submission",
+                "fishing",
+                "exhibitionist",
+                "sharing",
             ]
 
         def checkStatsList(self, stat):
@@ -42,8 +49,14 @@ init python:
 
             return True
 
+        def setDesc(self, charDesc):
+            self.charDesc = charDesc
+
         def setImage(self, charImage):
             self.charImage = charImage
+
+        def setProfilePic(self, charProfilePic):
+            self.charProfilePic = charProfilePic
 
         def setStats(self, stats, num = 0):
             if (stats in self.charStats):
@@ -90,6 +103,21 @@ init python:
 
         def setActive(self):
             self.isShow = True
+
+        def setHideName(self, hide, text = "?????"):
+            self.hideName = hide
+            self.hiddenNameText = text
+
+        def setImageByStat(self, stat, image):
+            if (self.checkStatsChar(stat)):
+                self.statsImages[stat] = image
+
+        def setHideStat(self, stat, hide = False, text = "?????"):
+            if (self.checkStatsChar(stat)):
+                self.statsHidden[stat] = {
+                    "hide": hide,
+                    "text": text
+                }
 
         def stripAccents(self, text):
             text = unicodedata.normalize("NFD", text)
@@ -157,3 +185,24 @@ init python:
                     statsChar[stats]["info"] = self.getInfoByStats(stats)
 
             return statsChar
+
+        @property
+        def getHideName(self):
+            return {
+                "hideName" : self.hideName,
+                "hiddenNameText" : self.hiddenNameText
+            }
+
+        def getImageByStat(self, stat):
+            if (self.checkStatsChar(stat)):
+                if (stat in self.statsImages):
+                    return self.statsImages[stat]
+
+            return self.getImage
+
+        def getHideStat(self, stat, oldText):
+            if (self.checkStatsChar(stat)):
+                if(stat in self.statsHidden):
+                    if (self.statsHidden[stat]["hide"]):
+                        return self.statsHidden[stat]["text"]
+            return oldText
