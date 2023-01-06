@@ -63,14 +63,15 @@ init python:
                 if (self.charCode not in self.allQuests):
                     self.allQuests[self.charCode] = []
 
-                self.allQuests[self.charCode].append(MountQuestObject(
-                    questTitle,
-                    questDesc,
-                    questStatus,
-                    questHint,
-                    questProgress,
-                    questPlace
-                ))
+                if self.stripAccents(questTitle) not in [self.stripAccents(data.getTitle) for data in self.allQuests[self.charCode]]:
+                    self.allQuests[self.charCode].append(MountQuestObject(
+                        questTitle,
+                        questDesc,
+                        questStatus,
+                        questHint,
+                        questProgress,
+                        questPlace
+                    ))
 
         def getAllQuestObject(self):
             return self.allQuests
