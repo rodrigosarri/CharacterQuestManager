@@ -10,6 +10,7 @@ screen allChars():
             xysize(177, 616)
             cols 1
             mousewheel True
+            draggable True
 
             for charButton in mountCharacter.getAllChars:
                 if (charButton.getActive):
